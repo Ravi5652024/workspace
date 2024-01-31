@@ -1,0 +1,12 @@
+
+X
+java:S26294"$Invoke method(s) only conditionally.b 745a397272f05ebd5ac5a107253fb523h
+ç	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.b fedf801662db9edf55296b732dab07fah
+è
+java:S3923)"[Remove this conditional structure or edit its code blocks so that they're not all the same.b 39c8942e1038872a822c0dc75eedbde3h
+f
+java:S1135*"2Complete the task associated to this TODO comment.b 3503b34a8f7b6cf24371c2a49534ad96h
+f
+java:S1135,"2Complete the task associated to this TODO comment.b 0e56d6a9d62bdd9144fcdf33b4bf95c0h
+f
+java:S11357"2Complete the task associated to this TODO comment.b a64197ae6a9db3e75b085616dbeeb257h

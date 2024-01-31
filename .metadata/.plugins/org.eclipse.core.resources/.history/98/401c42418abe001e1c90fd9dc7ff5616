@@ -1,0 +1,25 @@
+package com.example.demo.servicesImplementation;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.GiftPurchasedHistory;
+import com.example.demo.repo.GiftPurchasedHistoryRepo;
+import com.example.demo.request.GiftRequest;
+import com.example.demo.service.GiftSubscriptionServiceInterface;
+
+@Service
+public class GiftSubscriptionService implements GiftSubscriptionServiceInterface {
+
+	private final GiftPurchasedHistoryRepo giftHistoryRepo;
+
+	public GiftSubscriptionService(GiftPurchasedHistoryRepo giftHistoryRepo) {
+		this.giftHistoryRepo = giftHistoryRepo;
+	}
+
+	@Override
+	public GiftPurchasedHistory saveGiftPurchase(GiftPurchasedHistory giftHistory) {
+		GiftPurchasedHistory newHistory = giftHistoryRepo.save(giftHistory);
+		return newHistory;
+	}
+
+}

@@ -1,0 +1,377 @@
+package com.api.avatarbackend.controllers;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.bson.types.ObjectId;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.api.avatarbackend.entities.DiamondDetails;
+import com.api.avatarbackend.entities.DiamondPurchasedHistory;
+import com.api.avatarbackend.entities.DiamondUsageRate;
+import com.api.avatarbackend.entities.UserProfile;
+import com.api.avatarbackend.models.request.DiamondPurchasedHistoryRequest;
+import com.api.avatarbackend.models.request.DiamondRequest;
+import com.api.avatarbackend.models.request.DiamondSpendRequest;
+import com.api.avatarbackend.models.request.DiamondUsageRateRequest;
+import com.api.avatarbackend.models.request.UsageRateRequest;
+import com.api.avatarbackend.models.response.GenericRes;
+import com.api.avatarbackend.services.DiamondServiceInterface;
+import com.api.avatarbackend.utils.URIConstants;
+
+@RestController
+@CrossOrigin(origins = "*", maxAge = 3600)
+@RequestMapping(URIConstants.API_VERSION + URIConstants.DIAMOND)
+
+public class DiamondController {
+
+
+
+	private final DiamondServiceInterface diamondServiceInterafce;
+	
+
+
+	public DiamondController(DiamondServiceInterface diamondServiceInterafce) {
+		this.diamondServiceInterafce = diamondServiceInterafce;
+		
+
+	}
+
+	
+	
+
+	 @PostMapping(URIConstants.Save_DIAMONDS_PACK)
+	    public ResponseEntity<GenericRes<DiamondDetails>> createDiamondDetails(@RequestBody DiamondRequest diamondRequest) {
+	        DiamondDetails diamondDetails = diamondServiceInterafce.createDiamondDetails(diamondRequest);
+
+	        GenericRes<DiamondDetails> response = new GenericRes<>(200, "OK", "DIAMOND_DETAILS_CREATED", diamondDetails);
+	        return ResponseEntity.ok(response);
+	    }
+	 
+	 
+	 
+	 
+	 @GetMapping(URIConstants.GET_DIAMONDS_PACK)
+	    public ResponseEntity<GenericRes<DiamondDetails>> getDiamondDetailsById(@RequestBody DiamondDetails diamondDetail) {
+	        DiamondDetails diamondDetails = diamondServiceInterafce.getDiamondDetailsById(diamondDetail);
+
+	        if (diamondDetails != null) {
+	            GenericRes<DiamondDetails> response = new GenericRes<>(200, "OK", "DIAMOND_DETAILS_FOUND", diamondDetails);
+	            return ResponseEntity.ok(response);
+	        } else {
+	            GenericRes<DiamondDetails> response = new GenericRes<>(404, "NOT_FOUND", "DIAMOND_DETAILS_NOT_FOUND", null);
+	            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+	        }
+	    }
+	 
+	 
+	 
+	 @GetMapping(URIConstants.GET_ALL_DIAMONDS_PACKS)
+	    public ResponseEntity<List<GenericRes<DiamondDetails>>> getAllDiamondDetails() {
+	        List<DiamondDetails> diamondDetailsList = diamondServiceInterafce.getAllDiamondDetails();
+
+	        List<GenericRes<DiamondDetails>> responseList = diamondDetailsList.stream()
+	                .map(diamondDetails -> new GenericRes<>(200, "OK", "DIAMOND_DETAILS_FOUND", diamondDetails))
+	                .collect(Collectors.toList());
+
+	        return ResponseEntity.ok(responseList);
+	    }
+	 
+	 
+
+	 @PutMapping(URIConstants.UPDATE_DIAMONDS_PACK)
+	    public ResponseEntity<GenericRes<DiamondDetails>> updateDiamondDetails(
+	    		@RequestBody DiamondDetails diamondRequest) {
+	        DiamondDetails updatedDiamondDetails = diamondServiceInterafce.updateDiamondDetails(diamondRequest);
+
+	        if (updatedDiamondDetails != null) {
+	            GenericRes<DiamondDetails> response = new GenericRes<>(200, "OK", "DIAMOND_DETAILS_UPDATED", updatedDiamondDetails);
+	            return ResponseEntity.ok(response);
+	        } else {
+	            GenericRes<DiamondDetails> response = new GenericRes<>(404, "NOT_FOUND", "DIAMOND_DETAILS_NOT_FOUND", null);
+	            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+	        }
+	    }
+
+	 
+	 
+	 
+	 
+	 
+	 @DeleteMapping(URIConstants.DELETE_DIAMONDS_PACK)
+	    public ResponseEntity<GenericRes> deleteDiamondDetails(@RequestBody DiamondDetails diamondDetail) {
+	        boolean isDeleted = diamondServiceInterafce.deleteDiamondDetails(diamondDetail);
+
+	        if (isDeleted) {
+	            GenericRes response = new GenericRes<>(200, "OK", "DIAMOND_DETAILS_DELETED", "Deleted");
+	            return ResponseEntity.ok(response);
+	        } else {
+	            GenericRes response = new GenericRes<>(404, "NOT_FOUND", "DIAMOND_DETAILS_NOT_FOUND", "Not Found");
+	            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+	        }
+	    }
+	 
+	
+	 
+	 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@PostMapping(URIConstants.SAVE_DIAMONDS_PURCHASE)
+    public ResponseEntity<GenericRes<DiamondPurchasedHistory>> saveDiamondPurchasedHistory(
+            @RequestBody DiamondPurchasedHistoryRequest diamondHistoryRequest) {
+        DiamondPurchasedHistory savedHistory = diamondServiceInterafce.saveDiamondPurchasedHistory(diamondHistoryRequest);
+        GenericRes<DiamondPurchasedHistory> response = new GenericRes<>(200, "OK", "SAVED", savedHistory);
+        return ResponseEntity.ok(response);
+    }
+
+
+    @GetMapping(URIConstants.GET_DIAMONDS_PURCHASE)
+    public ResponseEntity<GenericRes<DiamondPurchasedHistory>> getDiamondPurchasedHistoryById(@RequestBody DiamondPurchasedHistory diamondHistoryRequest) {
+        DiamondPurchasedHistory history = diamondServiceInterafce.getDiamondPurchasedHistoryById(diamondHistoryRequest);
+        System.out.println(history);
+        GenericRes<DiamondPurchasedHistory> response = new GenericRes<>(200, "OK", "FOUND", history);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping(URIConstants.GET_ALL_DIAMONDS_PURCHASE_BY_USER)
+    
+    public ResponseEntity<GenericRes<List<DiamondPurchasedHistory>>> getAllPurchasedHistoryByUserId(@RequestBody DiamondPurchasedHistoryRequest diamondPurchasedHistoryRequest) {
+        List<DiamondPurchasedHistory> purchasedHistoryList = diamondServiceInterafce.getAllDiamondPurchasedHistoryByUserId(diamondPurchasedHistoryRequest);
+
+        GenericRes<List<DiamondPurchasedHistory>> response = new GenericRes<>(200, "OK", "FOUND_ALL", purchasedHistoryList);
+        return ResponseEntity.ok(response);
+    }
+
+  
+	
+    
+    
+    
+    
+	
+    
+    
+    
+    
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    @PostMapping(URIConstants.Save_DIAMONDS_USAGE_RATE)
+    public ResponseEntity<GenericRes<DiamondUsageRate>> saveUsageRate(@RequestBody DiamondUsageRateRequest diamondUsageRequest) {
+    	DiamondUsageRate savedDiamond = diamondServiceInterafce.saveUsageRate(diamondUsageRequest);
+        GenericRes<DiamondUsageRate> response = new GenericRes<>(200, "OK", "DIAMOND_SAVED", savedDiamond);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping(URIConstants.GET_DIAMONDS_USAGE_RATE)
+    public ResponseEntity<GenericRes<DiamondUsageRate>> getDiamondById(@RequestBody DiamondUsageRateRequest diamondUsageRequest) {
+        // Assuming you have a method like getDiamondUsageRateById in your service
+    	
+        DiamondUsageRate diamondUsageRate = diamondServiceInterafce.getUsageRateById(diamondUsageRequest);
+        
+        if (diamondUsageRate != null) {
+            GenericRes<DiamondUsageRate> response = new GenericRes<>(200, "OK", "DIAMOND_FOUND", diamondUsageRate);
+            return ResponseEntity.ok(response);
+        } else {
+          
+            GenericRes<DiamondUsageRate> response = new GenericRes<>(404, "Not Found", "DIAMOND_NOT_FOUND", null);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+        }
+    }
+
+
+    @GetMapping(URIConstants.GET_ALL_DIAMONDS_USAGE_RATE)
+    public ResponseEntity<GenericRes<List<DiamondUsageRate>>> getAllUsageRate() {
+        List<DiamondUsageRate> diamonds = diamondServiceInterafce.getAllUsageRate();
+        GenericRes<List<DiamondUsageRate>> response = new GenericRes<>(200, "OK", "DIAMONDS_FOUND", diamonds);
+        return ResponseEntity.ok(response);
+    }
+
+    @DeleteMapping(URIConstants.DELETE_DIAMONDS_USAGE_RATE)
+    public ResponseEntity<GenericRes> deleteUsageRate(@RequestBody DiamondUsageRateRequest diamondUsageRequest) {
+    	
+        boolean deleted = diamondServiceInterafce.deleteUsageRate(diamondUsageRequest);
+
+        if (deleted) {
+            GenericRes response = new GenericRes<>(200, "OK", "Diamond Usage Rate_deleted", "Object");
+            return ResponseEntity.ok(response);
+        } else {
+            // Handle case when the diamond with the given ID is not found
+            GenericRes response = new GenericRes<>(404, "Not Found", "Usage Rate with given Id_NOT_FOUND", "object");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+        }
+    }
+	
+	
+	
+	
+    @PutMapping(URIConstants.UPDATE_USAGE_RATE)
+    public ResponseEntity<GenericRes<DiamondUsageRate>> updateUsageRate(
+                 @RequestBody  UsageRateRequest usageRateRequest) {
+    	DiamondUsageRate diamondUsageRate = diamondServiceInterafce.updateUsageRate(usageRateRequest);
+        GenericRes<DiamondUsageRate> response = new GenericRes<>(200, "OK", "UPDATED", diamondUsageRate);
+        return ResponseEntity.ok(response);
+    }
+    
+    
+    
+    @PostMapping("/spendDiamonds")
+    public ResponseEntity<GenericRes<String>> spendDiamonds(@RequestBody DiamondSpendRequest spendRequest) {
+        boolean purchaseSuccessful = diamondServiceInterafce.spendDiamondsRequest(spendRequest);
+        
+        if (purchaseSuccessful) {
+            GenericRes<String> response = new GenericRes<>(200, "OK", "Diamonds spent successfully.", null);
+            return ResponseEntity.ok(response);
+        } else {
+            GenericRes<String> response = new GenericRes<>(400, "BAD_REQUEST", "Not enough diamonds to spend.", null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+        }
+    }
+	
+	
+	
+	
+    
+    
+    @GetMapping("/count")
+    
+	
+	
+	
+    public ResponseEntity<GenericRes<Integer>> getDiamondCount(@RequestBody UserProfile userProfile) {
+        int diamondCount = getDiamondCount(userProfile);
+        GenericRes<Integer> response = new GenericRes<>(200, "OK", "Diamond count retrieved successfully.", diamondCount);
+        return ResponseEntity.ok(response);
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

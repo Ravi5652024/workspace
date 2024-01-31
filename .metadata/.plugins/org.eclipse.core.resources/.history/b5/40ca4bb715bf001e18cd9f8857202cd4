@@ -1,0 +1,54 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import com.example.demo.entity.GiftDetails;
+import com.example.demo.entity.GiftPurchasedHistory;
+import com.example.demo.request.GiftRequest;
+import com.example.demo.response.GiftResponse;
+
+public interface GiftServiceInterface {
+
+	public GiftDetails addGift(GiftDetails giftDetails);
+
+	public List<GiftDetails> getAllGift();
+	
+	
+	
+	
+	
+	
+	
+	
+	public GiftDetails saveGiftDetails(GiftRequest giftRequest);
+
+    public GiftDetails updateGiftDetails(GiftRequest giftRequest);
+
+    public GiftDetails getGiftDetailsById(GiftRequest giftRequest);
+
+    public List<GiftDetails> getAllGiftDetails();
+
+    public boolean deleteGiftDetails(GiftDetails giftDetails);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public GiftPurchasedHistory saveGiftPurchase(GiftPurchasedHistory giftHistory);
+
+}

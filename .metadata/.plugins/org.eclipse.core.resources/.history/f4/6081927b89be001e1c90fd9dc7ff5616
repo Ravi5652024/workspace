@@ -1,0 +1,54 @@
+package com.example.demo.controller;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.entity.GiftDetails;
+import com.example.demo.helperclasses.GiftHelper;
+import com.example.demo.request.GiftRequest;
+import com.example.demo.response.GenericRes;
+import com.example.demo.response.GiftResponse;
+import com.example.demo.service.GiftServiceInterface;
+import com.example.demo.utils.URLConstants;
+
+@RestController
+
+@CrossOrigin(origins = "*", maxAge = 3600)
+@RequestMapping(URLConstants.API_VERSION + URLConstants.GIFT)
+
+public class GiftController {
+
+	private final GiftServiceInterface giftServiceInterface;
+
+	public GiftController(GiftServiceInterface giftServiceInterface) {
+		this.giftServiceInterface = giftServiceInterface;
+	}
+
+	GiftHelper extra = new GiftHelper();
+
+	@PostMapping("/save")
+	public ResponseEntity<GiftResponse> addGift(@RequestBody GiftRequest giftRequest) {
+		GiftDetails giftDetails = giftServiceInterface.addGift(extra.mapToGiftDetails(giftRequest));
+		return new ResponseEntity<GiftResponse>(extra.mapToGiftResponse(giftDetails), HttpStatus.ACCEPTED);
+	}
+
+	@GetMapping(URLConstants.GIFT_DETAIL)
+	public ResponseEntity<GenericRes<List<GiftResponse>>> getAllGifts() {
+		List<GiftDetails> giftList = giftServiceInterface.getAllGift();
+		List<GiftResponse> giftResponseList = giftList.stream().map(extra::mapToGiftResponse)
+				.collect(Collectors.toList());
+
+		GenericRes<List<GiftResponse>> response = new GenericRes<>(200, "OK", "Success", giftResponseList);
+		return ResponseEntity.ok(response);
+	}
+
+}

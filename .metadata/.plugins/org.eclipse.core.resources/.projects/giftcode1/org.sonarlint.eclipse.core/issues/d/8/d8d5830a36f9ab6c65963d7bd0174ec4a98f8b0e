@@ -1,0 +1,5 @@
+
+Ü
+java:S62041"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'b f31c9542f92d797a57d6f9bafca179cdh
+î
+java:S2293*"YReplace the type specification in this constructor call with the diamond operator ("<>").8ôﬂáÅ‘1b 4de3abfaab9871e89111d9d7915687afh

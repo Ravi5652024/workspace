@@ -1,0 +1,18 @@
+
+X
+java:S2629r"$Invoke method(s) only conditionally.b 95e7ac40577e369f6fceafac7a192fbah
+Y
+java:S2629ñ"$Invoke method(s) only conditionally.b 38b2006bf502c751eac66d3a4dd5f348h
+ç	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.b fedf801662db9edf55296b732dab07fah
+p	java:S125ó"<This block of commented-out lines of code should be removed.b 3de639a306814a27390715ac2de1227eh
+g
+java:S1135ò"2Complete the task associated to this TODO comment.b 0a10d74c1980a14d3332cbf43869f664h
+p	java:S125≠"<This block of commented-out lines of code should be removed.b 1cffdf7749522984b4645686ff0d462ah
+_
+java:S1128"+Remove this unused import 'java.util.List'.b 647165940d2971f696436f6a7da1f89dh
+~
+java:S1128"JRemove this unused import 'com.api.coolclub.enums.SubscriptionStatusEnum'.b d722ddc3771e31d5f100c244cf868060h
+r
+java:S1128">Remove this unused import 'com.api.coolclub.security.JwtUtil'.b 617dadc120289ca3debb0906a047cb8eh
+z
+java:S1128"FRemove this unused import 'com.api.coolclub.utils.EncDecPasswordUtil'.b 532507055deebc0fd6892132fb39c6f9h

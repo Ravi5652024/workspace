@@ -1,0 +1,136 @@
+[ERROR] 2024-02-01 00:05:50.991 | http-nio-8080-exec-1 | Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.NoSuchElementException: No value present] with root cause | 
+java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at com.api.avatarbackend.servicesImpl.DiamondService2.saveDiamondPurchasedHistory(DiamondService2.java:160)
+	at com.api.avatarbackend.controllers.DiamondController.saveDiamondPurchasedHistory(DiamondController.java:147)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at com.api.avatarbackend.security.JwtRequestFilter.doFilterInternal(JwtRequestFilter.java:113)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+[INFO] 2024-02-01 00:09:10.324 | RMI TCP Connection(29)-127.0.0.1 | Application shutdown requested. | 
+[INFO] 2024-02-01 00:10:12.906 | main | Starting AvatarBackendApplication using Java 17.0.9 on DESKTOP-ORQMQCK with PID 7828 (F:\workspace\gift_avatar-backend2\target\classes started by Ravi Ranjan in F:\workspace\gift_avatar-backend2) | 
+[INFO] 2024-02-01 00:10:12.908 | main | No active profile set, falling back to default profiles: default | 
+[INFO] 2024-02-01 00:10:14.033 | main | Multiple Spring Data modules found, entering strict repository configuration mode! | 
+[INFO] 2024-02-01 00:10:14.034 | main | Bootstrapping Spring Data MongoDB repositories in DEFAULT mode. | 
+[INFO] 2024-02-01 00:10:14.192 | main | Finished Spring Data repository scanning in 153 ms. Found 11 MongoDB repository interfaces. | 
+[INFO] 2024-02-01 00:10:14.207 | main | Multiple Spring Data modules found, entering strict repository configuration mode! | 
+[INFO] 2024-02-01 00:10:14.208 | main | Bootstrapping Spring Data Redis repositories in DEFAULT mode. | 
+[INFO] 2024-02-01 00:10:14.222 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.avatarbackend.repository.AvatarProfileRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-02-01 00:10:14.222 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.avatarbackend.repository.DiamondPurchasedHistoryRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-02-01 00:10:14.223 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.avatarbackend.repository.DiamondRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-02-01 00:10:14.224 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.avatarbackend.repository.DiamondUsageRateRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-02-01 00:10:14.224 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.avatarbackend.repository.GiftPurchasedHistoryRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-02-01 00:10:14.225 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.avatarbackend.repository.GiftRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-02-01 00:10:14.225 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.avatarbackend.repository.GlobalConfigRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-02-01 00:10:14.226 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.avatarbackend.repository.OperatorConfigRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-02-01 00:10:14.226 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.avatarbackend.repository.UserProfileRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-02-01 00:10:14.227 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.avatarbackend.repository.UserPurchaseProfileRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-02-01 00:10:14.227 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.avatarbackend.repository.VoiceConfigRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-02-01 00:10:14.227 | main | Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces. | 
+[INFO] 2024-02-01 00:10:14.686 | main | Tomcat initialized with port(s): 8080 (http) | 
+[INFO] 2024-02-01 00:10:14.695 | main | Starting service [Tomcat] | 
+[INFO] 2024-02-01 00:10:14.695 | main | Starting Servlet engine: [Apache Tomcat/9.0.55] | 
+[INFO] 2024-02-01 00:10:14.776 | main | Initializing Spring embedded WebApplicationContext | 
+[INFO] 2024-02-01 00:10:14.776 | main | Root WebApplicationContext: initialization completed in 1826 ms | 
+[INFO] 2024-02-01 00:10:14.962 | main | Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'} | 
+[INFO] 2024-02-01 00:10:15.019 | cluster-ClusterId{value='65ba940ebcd24113a7935aee', description='null'}-localhost:27017 | Opened connection [connectionId{localValue:2, serverValue:311}] to localhost:27017 | 
+[INFO] 2024-02-01 00:10:15.019 | cluster-rtt-ClusterId{value='65ba940ebcd24113a7935aee', description='null'}-localhost:27017 | Opened connection [connectionId{localValue:1, serverValue:312}] to localhost:27017 | 
+[INFO] 2024-02-01 00:10:15.019 | cluster-ClusterId{value='65ba940ebcd24113a7935aee', description='null'}-localhost:27017 | Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=20770101} | 
+[INFO] 2024-02-01 00:10:15.254 | main | Opened connection [connectionId{localValue:3, serverValue:313}] to localhost:27017 | 
+[INFO] 2024-02-01 00:10:15.463 | main | SETUP DONE: GLOBAL VARIABLE | 
+[INFO] 2024-02-01 00:10:15.472 | main | SETUP DONE: OPERATORS DETAILS | 
+[INFO] 2024-02-01 00:10:15.472 | main | ----------------------------------------------- | 
+[INFO] 2024-02-01 00:10:15.472 | main | |         SERVER SUCCESSFULLY STARTED         | | 
+[INFO] 2024-02-01 00:10:15.472 | main | ----------------------------------------------- | 
+[INFO] 2024-02-01 00:10:16.296 | main | 
+
+Using generated security password: 6857fe44-ced4-4201-9bb8-5887da3a02b2
+ | 
+[INFO] 2024-02-01 00:10:16.390 | main | Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@42257df7, org.springframework.security.web.context.SecurityContextPersistenceFilter@4f1f2f84, org.springframework.security.web.header.HeaderWriterFilter@748aa7dc, org.springframework.web.filter.CorsFilter@7b11ff9a, org.springframework.security.web.authentication.logout.LogoutFilter@1a45e29f, com.api.avatarbackend.security.JwtRequestFilter@539fc5d1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19c06762, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7298c2d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3bd79444, org.springframework.security.web.session.SessionManagementFilter@5e557671, org.springframework.security.web.access.ExceptionTranslationFilter@74f92d14, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6c3a7b84] | 
+[INFO] 2024-02-01 00:10:16.588 | main | Tomcat started on port(s): 8080 (http) with context path '' | 
+[INFO] 2024-02-01 00:10:16.944 | main | Started AvatarBackendApplication in 4.506 seconds (JVM running for 5.276) | 
+[INFO] 2024-02-01 00:10:23.519 | http-nio-8080-exec-1 | Initializing Spring DispatcherServlet 'dispatcherServlet' | 
+[INFO] 2024-02-01 00:10:23.519 | http-nio-8080-exec-1 | Initializing Servlet 'dispatcherServlet' | 
+[INFO] 2024-02-01 00:10:23.520 | http-nio-8080-exec-1 | Completed initialization in 1 ms | 

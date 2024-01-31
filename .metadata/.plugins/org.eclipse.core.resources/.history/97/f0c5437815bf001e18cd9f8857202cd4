@@ -1,0 +1,45 @@
+package com.example.demo.servicesImplementation;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.GiftDetails;
+import com.example.demo.entity.GiftPurchasedHistory;
+import com.example.demo.repo.GiftPurchasedHistoryRepo;
+import com.example.demo.repo.GiftRepo;
+import com.example.demo.request.GiftRequest;
+import com.example.demo.response.GiftResponse;
+import com.example.demo.service.GiftServiceInterface;
+
+@Service
+public class GiftService implements GiftServiceInterface {
+
+	private final GiftRepo giftRepo;
+	private final GiftPurchasedHistoryRepo giftHistoryRepo;
+
+	public GiftService(GiftRepo giftRepo,GiftPurchasedHistoryRepo giftHistoryRepo) {
+		this.giftRepo = giftRepo;
+		this.giftHistoryRepo=giftHistoryRepo;
+	}
+
+	// GiftService
+	@Override
+	public GiftDetails addGift(GiftDetails giftDetails) {
+		return giftRepo.save(giftDetails);
+	}
+
+	@Override
+	public List<GiftDetails> getAllGift() {
+		List<GiftDetails> giftList = giftRepo.findAll();
+		return giftList;
+	}
+	
+
+
+	@Override
+	public GiftPurchasedHistory saveGiftPurchase(GiftPurchasedHistory giftHistory) {
+		GiftPurchasedHistory newHistory = giftHistoryRepo.save(giftHistory);
+		return newHistory;
+	}
+}

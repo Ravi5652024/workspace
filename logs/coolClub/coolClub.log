@@ -1,0 +1,76 @@
+[INFO] 2024-01-29 15:11:53.869 | main | Starting CoolClubApplication using Java 17.0.9 on DESKTOP-ORQMQCK with PID 9460 (F:\workspace\cool-club_redis_checking\target\classes started by Ravi Ranjan in F:\workspace\cool-club_redis_checking) | 
+[INFO] 2024-01-29 15:11:53.874 | main | No active profile set, falling back to default profiles: default | 
+[INFO] 2024-01-29 15:11:55.024 | main | Multiple Spring Data modules found, entering strict repository configuration mode! | 
+[INFO] 2024-01-29 15:11:55.025 | main | Bootstrapping Spring Data MongoDB repositories in DEFAULT mode. | 
+[INFO] 2024-01-29 15:11:55.199 | main | Finished Spring Data repository scanning in 168 ms. Found 5 MongoDB repository interfaces. | 
+[INFO] 2024-01-29 15:11:55.213 | main | Multiple Spring Data modules found, entering strict repository configuration mode! | 
+[INFO] 2024-01-29 15:11:55.214 | main | Bootstrapping Spring Data Redis repositories in DEFAULT mode. | 
+[INFO] 2024-01-29 15:11:55.231 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.coolclub.repository.GlobalConfigRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-01-29 15:11:55.231 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.coolclub.repository.OperatorConfigRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-01-29 15:11:55.231 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.coolclub.repository.OtpHistoryRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-01-29 15:11:55.232 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.coolclub.repository.ScreenConfigRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-01-29 15:11:55.233 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.coolclub.repository.UserProfileRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-01-29 15:11:55.233 | main | Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces. | 
+[INFO] 2024-01-29 15:11:55.742 | main | Tomcat initialized with port(s): 8080 (http) | 
+[INFO] 2024-01-29 15:11:55.751 | main | Starting service [Tomcat] | 
+[INFO] 2024-01-29 15:11:55.751 | main | Starting Servlet engine: [Apache Tomcat/9.0.55] | 
+[INFO] 2024-01-29 15:11:55.833 | main | Initializing Spring embedded WebApplicationContext | 
+[INFO] 2024-01-29 15:11:55.833 | main | Root WebApplicationContext: initialization completed in 1914 ms | 
+[INFO] 2024-01-29 15:11:56.002 | main | Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'} | 
+[INFO] 2024-01-29 15:11:56.090 | cluster-ClusterId{value='65b772e30853393a67fc7558', description='null'}-localhost:27017 | Opened connection [connectionId{localValue:1, serverValue:8}] to localhost:27017 | 
+[INFO] 2024-01-29 15:11:56.090 | cluster-rtt-ClusterId{value='65b772e30853393a67fc7558', description='null'}-localhost:27017 | Opened connection [connectionId{localValue:2, serverValue:7}] to localhost:27017 | 
+[INFO] 2024-01-29 15:11:56.090 | cluster-ClusterId{value='65b772e30853393a67fc7558', description='null'}-localhost:27017 | Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=19835900} | 
+[INFO] 2024-01-29 15:11:56.302 | main | Opened connection [connectionId{localValue:3, serverValue:9}] to localhost:27017 | 
+[INFO] 2024-01-29 15:11:56.514 | main | SETUP DONE: GLOBAL VARIABLE | 
+[INFO] 2024-01-29 15:11:56.523 | main | SETUP DONE: OPERATORS DETAILS | 
+[INFO] 2024-01-29 15:11:56.523 | main | ----------------------------------------------- | 
+[INFO] 2024-01-29 15:11:56.523 | main | |         SERVER SUCCESSFULLY STARTED         | | 
+[INFO] 2024-01-29 15:11:56.523 | main | ----------------------------------------------- | 
+[INFO] 2024-01-29 15:11:57.410 | main | 
+
+Using generated security password: 218f5d67-b5bd-46bd-bb96-6a9af6135fbc
+ | 
+[INFO] 2024-01-29 15:11:57.501 | main | Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@53c9541c, org.springframework.security.web.context.SecurityContextPersistenceFilter@304e1e4e, org.springframework.security.web.header.HeaderWriterFilter@5afba80c, org.springframework.web.filter.CorsFilter@591febcb, org.springframework.security.web.authentication.logout.LogoutFilter@59c00722, com.api.coolclub.security.JwtRequestFilter@4e4894d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@799206ad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7fdf7359, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d6745ed, org.springframework.security.web.session.SessionManagementFilter@16024b49, org.springframework.security.web.access.ExceptionTranslationFilter@38394e76, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3fc14dc0] | 
+[INFO] 2024-01-29 15:11:57.709 | main | Tomcat started on port(s): 8080 (http) with context path '' | 
+[INFO] 2024-01-29 15:11:58.021 | main | Started CoolClubApplication in 4.659 seconds (JVM running for 5.412) | 
+[INFO] 2024-01-29 15:12:32.130 | http-nio-8080-exec-2 | Initializing Spring DispatcherServlet 'dispatcherServlet' | 
+[INFO] 2024-01-29 15:12:32.130 | http-nio-8080-exec-2 | Initializing Servlet 'dispatcherServlet' | 
+[INFO] 2024-01-29 15:12:32.132 | http-nio-8080-exec-2 | Completed initialization in 2 ms | 
+[ERROR] 2024-01-29 15:12:32.158 | http-nio-8080-exec-2 | -- ERROR : [JwtAuthenticationEntryPoint]: Full authentication is required to access this resource | 
+[INFO] 2024-01-29 15:13:38.990 | RMI TCP Connection(11)-127.0.0.1 | Application shutdown requested. | 
+[INFO] 2024-01-29 15:13:42.501 | main | Starting CoolClubApplication using Java 17.0.9 on DESKTOP-ORQMQCK with PID 21072 (F:\workspace\cool-club_redis_checking\target\classes started by Ravi Ranjan in F:\workspace\cool-club_redis_checking) | 
+[INFO] 2024-01-29 15:13:42.503 | main | No active profile set, falling back to default profiles: default | 
+[INFO] 2024-01-29 15:13:43.316 | main | Multiple Spring Data modules found, entering strict repository configuration mode! | 
+[INFO] 2024-01-29 15:13:43.317 | main | Bootstrapping Spring Data MongoDB repositories in DEFAULT mode. | 
+[INFO] 2024-01-29 15:13:43.470 | main | Finished Spring Data repository scanning in 150 ms. Found 5 MongoDB repository interfaces. | 
+[INFO] 2024-01-29 15:13:43.484 | main | Multiple Spring Data modules found, entering strict repository configuration mode! | 
+[INFO] 2024-01-29 15:13:43.485 | main | Bootstrapping Spring Data Redis repositories in DEFAULT mode. | 
+[INFO] 2024-01-29 15:13:43.499 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.coolclub.repository.GlobalConfigRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-01-29 15:13:43.500 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.coolclub.repository.OperatorConfigRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-01-29 15:13:43.500 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.coolclub.repository.OtpHistoryRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-01-29 15:13:43.501 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.coolclub.repository.ScreenConfigRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-01-29 15:13:43.501 | main | Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.api.coolclub.repository.UserProfileRepo. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository. | 
+[INFO] 2024-01-29 15:13:43.501 | main | Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces. | 
+[INFO] 2024-01-29 15:13:43.989 | main | Tomcat initialized with port(s): 8080 (http) | 
+[INFO] 2024-01-29 15:13:43.997 | main | Starting service [Tomcat] | 
+[INFO] 2024-01-29 15:13:43.998 | main | Starting Servlet engine: [Apache Tomcat/9.0.55] | 
+[INFO] 2024-01-29 15:13:44.076 | main | Initializing Spring embedded WebApplicationContext | 
+[INFO] 2024-01-29 15:13:44.077 | main | Root WebApplicationContext: initialization completed in 1531 ms | 
+[INFO] 2024-01-29 15:13:44.240 | main | Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'} | 
+[INFO] 2024-01-29 15:13:44.298 | cluster-rtt-ClusterId{value='65b7735064e8296dfef2f068', description='null'}-localhost:27017 | Opened connection [connectionId{localValue:2, serverValue:12}] to localhost:27017 | 
+[INFO] 2024-01-29 15:13:44.298 | cluster-ClusterId{value='65b7735064e8296dfef2f068', description='null'}-localhost:27017 | Opened connection [connectionId{localValue:1, serverValue:13}] to localhost:27017 | 
+[INFO] 2024-01-29 15:13:44.299 | cluster-ClusterId{value='65b7735064e8296dfef2f068', description='null'}-localhost:27017 | Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=21582400} | 
+[INFO] 2024-01-29 15:13:44.510 | main | Opened connection [connectionId{localValue:3, serverValue:14}] to localhost:27017 | 
+[INFO] 2024-01-29 15:13:44.749 | main | SETUP DONE: GLOBAL VARIABLE | 
+[INFO] 2024-01-29 15:13:44.757 | main | SETUP DONE: OPERATORS DETAILS | 
+[INFO] 2024-01-29 15:13:44.757 | main | ----------------------------------------------- | 
+[INFO] 2024-01-29 15:13:44.757 | main | |         SERVER SUCCESSFULLY STARTED         | | 
+[INFO] 2024-01-29 15:13:44.757 | main | ----------------------------------------------- | 
+[INFO] 2024-01-29 15:13:45.557 | main | 
+
+Using generated security password: 6d1e2122-ae06-47c0-a340-c23adc741546
+ | 
+[INFO] 2024-01-29 15:13:45.641 | main | Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@528c4353, org.springframework.security.web.context.SecurityContextPersistenceFilter@64a4739, org.springframework.security.web.header.HeaderWriterFilter@33845e3d, org.springframework.web.filter.CorsFilter@1a06b95, org.springframework.security.web.authentication.logout.LogoutFilter@799206ad, com.api.coolclub.security.JwtRequestFilter@28e94c2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@613a608e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@38394e76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7fb02606, org.springframework.security.web.session.SessionManagementFilter@3bf41cd0, org.springframework.security.web.access.ExceptionTranslationFilter@e08d871, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7e366c6f] | 
+[INFO] 2024-01-29 15:13:45.849 | main | Tomcat started on port(s): 8080 (http) with context path '' | 
+[INFO] 2024-01-29 15:13:46.143 | main | Started CoolClubApplication in 4.087 seconds (JVM running for 4.819) | 
+[INFO] 2024-01-29 15:13:55.863 | RMI TCP Connection(8)-127.0.0.1 | Application shutdown requested. | 

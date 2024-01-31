@@ -1,0 +1,49 @@
+package com.example.demo.helperclasses;
+
+import java.time.LocalDateTime;
+
+import org.springframework.stereotype.Component;
+
+import com.example.demo.entity.DiamondDetails;
+import com.example.demo.entity.DiamondPurchasedHistory;
+import com.example.demo.request.DiamondPurchasedHistoryRequest;
+import com.example.demo.request.DiamondRequest;
+import com.example.demo.response.DiamondResponse;
+
+@Component
+
+public class DiamondHelper {
+
+	// This function will be remove afterward
+	public DiamondDetails mapToDiamondDetails(DiamondRequest diamondRequest) {
+		DiamondDetails diamondDetails = new DiamondDetails();
+		diamondDetails.setUrl(diamondRequest.getUrl());
+		diamondDetails.setCost(diamondRequest.getCost());
+		diamondDetails.setCurrency(diamondRequest.getCurrency());
+		diamondDetails.setDiamond_Count(diamondRequest.getDiamond_Count());
+		return diamondDetails;
+	}
+
+	
+	public DiamondResponse mapToGiftResponse(DiamondDetails diamondDetails) {
+		DiamondResponse diamondResponse = new DiamondResponse();
+		diamondResponse.setId(diamondDetails.getId());
+		diamondResponse.setUrl(diamondDetails.getUrl());
+		diamondResponse.setCost(diamondDetails.getCost());
+		diamondResponse.setCurrency(diamondDetails.getCurrency());
+		diamondResponse.setDiamond_Count(diamondDetails.getDiamond_Count());
+
+		return diamondResponse;
+	}
+
+
+	public DiamondPurchasedHistory mapToPurchasedHistory(DiamondPurchasedHistoryRequest diamondPurchasedHistoryRequest) {
+		DiamondPurchasedHistory newPurchasedHistory = new DiamondPurchasedHistory();
+		newPurchasedHistory.setDiamondPackId(diamondPurchasedHistoryRequest.getDiamondPackId());
+		newPurchasedHistory.setUserId(diamondPurchasedHistoryRequest.getUserId());
+		newPurchasedHistory.setPurchaseOn(LocalDateTime.now());
+		newPurchasedHistory.setDiamond_Count(diamondPurchasedHistoryRequest.getDamond_count());
+		return newPurchasedHistory;
+	}
+
+}

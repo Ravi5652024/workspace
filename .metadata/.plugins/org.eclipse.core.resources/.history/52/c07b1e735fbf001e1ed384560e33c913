@@ -1,0 +1,5 @@
+package com.api.avatarbackend.entities;
+
+public class DiamondAcquire {
+
+}

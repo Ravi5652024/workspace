@@ -1,0 +1,12 @@
+package com.api.avatarbackend.repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.api.avatarbackend.entities.DiamondPurchasedHistory;
+
+
+
+
+public interface DiamondPurchasedHistoryRepo extends MongoRepository<DiamondPurchasedHistory, String> {
+
+}

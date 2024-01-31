@@ -1,0 +1,9 @@
+package com.example.demo.service;
+
+import com.example.demo.entity.GiftPurchaseHistory;
+
+public interface DiamondSubscriptionServiceInterface {
+	
+	public GiftPurchaseHistory saveDiamondPurchase(GiftPurchaseHistory mapToGiftDetails);
+
+}

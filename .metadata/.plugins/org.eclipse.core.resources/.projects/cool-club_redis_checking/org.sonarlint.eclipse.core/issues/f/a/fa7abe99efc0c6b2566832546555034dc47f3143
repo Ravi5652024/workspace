@@ -1,0 +1,10 @@
+
+y	java:S112"FDefine and throw a dedicated exception instead of using a generic one.b b0d4998a26f5b5742ad38c4af8817e32h
+n
+java:S1118":Add a private constructor to hide the implicit public one.b bd2b138ae781d590582cfff6f5b8defch
+m
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8b 52cbbfbe0fa388d2fc0de5075ed904beh
+M
+java:S5542"Use a secure cipher mode.b c4bd4daef9a9217247c24768d88c40e6h
+M
+java:S5542$"Use a secure cipher mode.b c4bd4daef9a9217247c24768d88c40e6h

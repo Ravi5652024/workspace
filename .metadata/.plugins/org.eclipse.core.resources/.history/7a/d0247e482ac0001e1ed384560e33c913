@@ -1,0 +1,35 @@
+package com.api.avatarbackend.entities;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserGiftInfo {
+
+    private String userId; // User ID
+    private Map<String, Integer> giftCounts; // Map to store gift IDs and their counts
+    private Map<String, Gift> availableGifts; // Map to store available gifts
+
+    public UserGiftInfo(String userId, Map<String, Gift> availableGifts) {
+        this.userId = userId;
+        this.giftCounts = new HashMap<>();
+        this.availableGifts = availableGifts;
+    }
+
+    public void incrementGiftCount(String giftId) {
+        giftCounts.put(giftId, giftCounts.getOrDefault(giftId, 0) + 1);
+    }
+
+    public void decrementGiftCount(String giftId) {
+        int count = giftCounts.getOrDefault(giftId, 0);
+        if (count > 0) {
+            giftCounts.put(giftId, count - 1);
+        }
+    }
+}

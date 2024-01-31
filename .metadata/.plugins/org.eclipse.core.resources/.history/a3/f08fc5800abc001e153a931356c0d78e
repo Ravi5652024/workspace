@@ -1,0 +1,30 @@
+package com.example.demo.servicesImplementation;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.DiamondPurchasedHistory;
+import com.example.demo.entity.GiftPurchasedHistory;
+import com.example.demo.repo.DiamondPurchasedHistoryRepo;
+import com.example.demo.repo.GiftPurchasedHistoryRepo;
+import com.example.demo.service.DiamondSubscriptionServiceInterface;
+
+@Service
+
+public class DiamondSubsciptionService implements DiamondSubscriptionServiceInterface{
+
+	
+	private final DiamondPurchasedHistoryRepo diamondHistoryRepo;
+
+	public DiamondSubsciptionService(DiamondPurchasedHistoryRepo diamondHistoryRepo) {
+		this.diamondHistoryRepo = diamondHistoryRepo;
+	}
+
+	
+	@Override
+	public DiamondPurchasedHistory saveDiamondPurchased(DiamondPurchasedHistory diamondPurchasedHistory) {
+		DiamondPurchasedHistory newHistory=diamondHistoryRepo.save(diamondPurchasedHistory);
+		return newHistory;
+	}
+
+	
+}

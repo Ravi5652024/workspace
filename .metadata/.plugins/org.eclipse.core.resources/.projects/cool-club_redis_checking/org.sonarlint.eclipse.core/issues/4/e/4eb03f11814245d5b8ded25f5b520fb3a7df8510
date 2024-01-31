@@ -1,0 +1,19 @@
+
+X
+java:S2629 "$Invoke method(s) only conditionally.b f357fee5dd63713af513e3d12440b387h
+X
+java:S2629!"$Invoke method(s) only conditionally.b 0dbf0b18acfc013019afbf950cdd9ca4h
+f
+java:S1135,"2Complete the task associated to this TODO comment.b 400e75310b94564bf930fda7aa3c8b6ah
+‚
+java:S6201E"NReplace this instanceof check and cast with 'instanceof JSONObject jsonobject'b 6c790b7f25e610bf0cb901b155b81d9bh
+€
+java:S6201G"LReplace this instanceof check and cast with 'instanceof JSONArray jsonarray'b 0da12c248ec37fb823329d7094b3c775h
+‚
+java:S6201I"NReplace this instanceof check and cast with 'instanceof String translationKey'b 200d9ff4c517d6d6cef8aab6078adc85h
+‚
+java:S6201W"NReplace this instanceof check and cast with 'instanceof JSONObject jsonobject'b 6cc45a051f593d95f69e48c92f694015h
+€
+java:S6201Y"LReplace this instanceof check and cast with 'instanceof JSONArray jsonarray'b 24b7bceb894b0ff31bbbd28fea029188h
+z
+java:S6201["FReplace this instanceof check and cast with 'instanceof String string'b f94e0de7a82473be0866688eed8f5bdbh

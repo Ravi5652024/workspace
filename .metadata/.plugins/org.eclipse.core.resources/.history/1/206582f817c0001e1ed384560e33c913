@@ -1,0 +1,28 @@
+package com.api.avatarbackend.repository;
+
+import java.util.List;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.api.avatarbackend.entities.DiamondTransactionHistory;
+import com.api.avatarbackend.entities.UserProfile;
+
+
+
+/*
+ * @Author Rohan_Sharma
+*/
+
+@Repository
+public interface UserProfileRepo extends MongoRepository<UserProfile, String>{
+
+    @Query(value = "", fields = "{ '_id': 1}")
+    UserProfile findByMsisdn(String msisdn);
+
+    @Query(value = "", fields = "{ '_id': 1}")
+    UserProfile findByEmail(String email);
+    
+    List<DiamondTransactionHistory> findByUserId(String userId);
+}

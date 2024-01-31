@@ -1,0 +1,12 @@
+package com.example.demo.service;
+
+import com.example.demo.entity.GiftPurchasedHistory;
+import com.example.demo.request.GiftRequest;
+
+public interface GiftSubscriptionServiceInterface {
+
+	public GiftPurchasedHistory saveGiftPurchase(GiftPurchasedHistory giftHistory);
+
+	
+
+}

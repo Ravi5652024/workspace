@@ -1,0 +1,22 @@
+package com.example.demo.entity;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.annotation.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Document(collection="diamond_detail")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class DiamondDetails {
+	@Id
+	private String Id;
+	private String url;
+	private int diamond_Count;
+	private float cost;
+	private String currency;
+
+
+}

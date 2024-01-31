@@ -1,0 +1,14 @@
+package com.example.demo.request;
+
+import java.time.LocalDateTime;
+
+public class DiamondUsageRequest {
+	
+	private String id;
+    private Double callRate;
+    private Double imageRate;
+    private String operatorId;
+    private LocalDateTime createdOn;
+    private LocalDateTime updatedOn;
+
+}

@@ -1,0 +1,9 @@
+package com.api.avatarbackend.models.request;
+
+public class UsageRateRequest {
+	
+	private String id;
+	private Double imageRate;
+    private String callRate;
+
+}

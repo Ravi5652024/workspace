@@ -1,0 +1,40 @@
+
+{
+java:S11928"GDefine a constant instead of duplicating this literal "system" 6 times.b 11c53f588ff71c2ff4bae67f38e99723h
+X
+java:S2629S"$Invoke method(s) only conditionally.b 3b35367617c9efafdcde455a14849961h
+X
+java:S2629r"$Invoke method(s) only conditionally.b 487777bebd9e213c9854f2306c87a8a3h
+Y
+java:S2629‡"$Invoke method(s) only conditionally.b 487777bebd9e213c9854f2306c87a8a3h
+u
+java:S1226M"AIntroduce a new variable instead of reusing the parameter "lang".b 7572559ca86e781ba8fe8073a0b725c6h
+{
+java:S1226N"GIntroduce a new variable instead of reusing the parameter "operatorId".b 9461b85cd6e98dd8d070bbb7d9a3ad51h
+u
+java:S1226b"AIntroduce a new variable instead of reusing the parameter "lang".b 7572559ca86e781ba8fe8073a0b725c6h
+{
+java:S1226c"GIntroduce a new variable instead of reusing the parameter "operatorId".b 9461b85cd6e98dd8d070bbb7d9a3ad51h
+u
+java:S1226p"AIntroduce a new variable instead of reusing the parameter "lang".b 7572559ca86e781ba8fe8073a0b725c6h
+{
+java:S1226q"GIntroduce a new variable instead of reusing the parameter "operatorId".b 9461b85cd6e98dd8d070bbb7d9a3ad51h
+u
+java:S1226z"AIntroduce a new variable instead of reusing the parameter "lang".b 7572559ca86e781ba8fe8073a0b725c6h
+{
+java:S1226{"GIntroduce a new variable instead of reusing the parameter "operatorId".b 9461b85cd6e98dd8d070bbb7d9a3ad51h
+v
+java:S1226…"AIntroduce a new variable instead of reusing the parameter "lang".b 7572559ca86e781ba8fe8073a0b725c6h
+|
+java:S1226†"GIntroduce a new variable instead of reusing the parameter "operatorId".b 9461b85cd6e98dd8d070bbb7d9a3ad51h
+o	java:S1257"<This block of commented-out lines of code should be removed.b b659d33fe8036d6e500bd6ea35720ad3h
+o	java:S125>"<This block of commented-out lines of code should be removed.b 83867529739629db5f1fbd70054e34f9h
+o	java:S125K"<This block of commented-out lines of code should be removed.b b659d33fe8036d6e500bd6ea35720ad3h
+o	java:S125O"<This block of commented-out lines of code should be removed.b 4d47bcdf09435dc08c7496f12d9b0940h
+o	java:S125T"<This block of commented-out lines of code should be removed.b 496c1e991be01c3790b999dd85044f54h
+o	java:S125`"<This block of commented-out lines of code should be removed.b b659d33fe8036d6e500bd6ea35720ad3h
+o	java:S125e"<This block of commented-out lines of code should be removed.b 9deeb001c78d0dbfa2b9c5da54e56e28h
+‚
+java:S1128"NRemove this unused import 'com.api.avatarbackend.services.AvatarMediaService'.b 32f84e36e612d098cb76526a94568cf5h
+l
+java:S1068-"8Remove this unused "avatarProfileService" private field.b 3cea81e355ddcbf9b7644040e63e42c3h

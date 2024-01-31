@@ -1,0 +1,27 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import com.example.demo.entity.DiamondDetails;
+import com.example.demo.entity.DiamondPurchasedHistory;
+import com.example.demo.entity.DiamondUsageRate;
+import com.example.demo.request.DiamondUsageRequest;
+
+public interface DiamondServiceInterface {
+
+	public DiamondDetails addDiamond(DiamondDetails diamondDetails);
+
+	public List<DiamondDetails> getAllDiamondPacks();
+
+	public DiamondPurchasedHistory saveDiamondPurchased(DiamondPurchasedHistory diamondPurchasedHistory);
+    
+	
+	public DiamondUsageRate saveUsageRate(DiamondUsageRequest diamondUsageRequest);
+
+	public DiamondUsageRate getUsageRateById(String id);
+
+	public List<DiamondUsageRate> getAllUsageRate();
+
+    public void deleteDiamond(String id);
+
+}

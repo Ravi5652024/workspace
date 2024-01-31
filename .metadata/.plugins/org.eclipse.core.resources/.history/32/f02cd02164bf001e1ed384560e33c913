@@ -1,0 +1,10 @@
+package com.api.avatarbackend.repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.api.avatarbackend.entities.UserProfile;
+import com.api.avatarbackend.entities.UserPurchaseProfile;
+
+public interface UserPurchaseProfileRepo extends MongoRepository<UserPurchaseProfile, String>{
+
+}

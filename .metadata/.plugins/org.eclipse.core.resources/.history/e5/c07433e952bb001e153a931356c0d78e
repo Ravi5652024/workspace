@@ -1,0 +1,18 @@
+package com.example.demo.entity;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.Data;
+
+@Document(collection="diamonddetail")
+@Data
+public class DiamondDetails {
+	
+	private String Id;
+	private String url;
+	private int diamond_Count;
+	private float cost;
+	private String currency;
+
+
+}

@@ -1,0 +1,14 @@
+
+}
+java:S1192?"IDefine a constant instead of duplicating this literal "password" 3 times.b d67d52e1de779f4faf5694b6b6bae2f5h
+X
+java:S2629H"$Invoke method(s) only conditionally.b a574b91677eda7f1b92ac2782da21ec5h
+X
+java:S2629J"$Invoke method(s) only conditionally.b 063e29205ef4995582371e2bd07be913h
+X
+java:S2629"$Invoke method(s) only conditionally.b 063e29205ef4995582371e2bd07be913h
+Y
+java:S2629≈"$Invoke method(s) only conditionally.b a574b91677eda7f1b92ac2782da21ec5h
+Y
+java:S2629»"$Invoke method(s) only conditionally.b 063e29205ef4995582371e2bd07be913h
+ç	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.b fedf801662db9edf55296b732dab07fah

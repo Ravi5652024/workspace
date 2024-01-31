@@ -1,0 +1,53 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import com.example.demo.entity.DiamondDetails;
+import com.example.demo.entity.DiamondPurchasedHistory;
+import com.example.demo.entity.DiamondUsageRate;
+import com.example.demo.request.DiamondPurchasedHistoryRequest;
+import com.example.demo.request.DiamondRequest;
+import com.example.demo.request.DiamondUsageRequest;
+
+public interface DiamondServiceInterface {
+	
+	
+	public  DiamondDetails createDiamondDetails(DiamondRequest diamondRequest);
+	public  DiamondDetails updateDiamondDetails(String id, DiamondRequest diamondRequest);
+	public DiamondDetails getDiamondDetailsById(String id);
+	public List<DiamondDetails> getAllDiamondDetails();
+	public boolean deleteDiamondDetails(String id);
+	
+	
+	
+	
+	
+	
+	
+	public  DiamondPurchasedHistory saveDiamondPurchasedHistory(DiamondPurchasedHistoryRequest diamondHistoryRequest);
+
+	public  DiamondPurchasedHistory updateDiamondPurchasedHistory(String id, DiamondPurchasedHistoryRequest diamondHistoryRequest);
+
+	public  DiamondPurchasedHistory getDiamondPurchasedHistoryById(String id);
+
+	public  List<DiamondPurchasedHistory> getAllDiamondPurchasedHistory();
+
+	public  void deleteDiamondPurchasedHistory(String id);  
+	
+	
+	
+	
+	
+	
+	
+	public DiamondUsageRate saveUsageRate(DiamondUsageRequest diamondUsageRequest);
+
+	public DiamondUsageRate getUsageRateById(String id);
+
+	public List<DiamondUsageRate> getAllUsageRate();
+
+    public boolean deleteUsageRate(String id);
+    
+    public DiamondUsageRate updateDiamondUsageRate(String id, DiamondUsageRequest diamondUsageRequest);
+
+}

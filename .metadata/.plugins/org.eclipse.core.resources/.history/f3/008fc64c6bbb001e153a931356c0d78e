@@ -1,0 +1,33 @@
+package com.example.demo.servicesImplementation;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.GiftDetails;
+import com.example.demo.repo.GiftRepo;
+import com.example.demo.request.GiftRequest;
+import com.example.demo.response.GiftResponse;
+import com.example.demo.service.GiftServiceInterface;
+
+@Service
+public class GiftService implements GiftServiceInterface {
+
+	private final GiftRepo giftRepo;
+
+	public GiftService(GiftRepo giftRepo) {
+		this.giftRepo = giftRepo;
+	}
+
+	// GiftService
+//	@Override
+//	public GiftDetails addGift(GiftDetails giftDetails) {
+//		return giftRepo.save(giftDetails);
+//	}
+
+	@Override
+	public List<GiftDetails> getAllGift() {
+		List<GiftDetails> giftList = giftRepo.findAll();
+		return giftList;
+	}
+}

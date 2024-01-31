@@ -1,0 +1,133 @@
+package com.api.avatarbackend.utils;
+
+/*
+ * @Author Rohan_Sharma
+*/
+
+public class URIConstants {
+    
+    private URIConstants(){
+        
+    }
+
+    public static final String API_VERSION =  "/v1";
+
+    /*
+     *  Default Controller Constants
+    */
+    
+    public static final String DEFAULT_BASE_URL =  "/api";
+    public static final String GET_USERID =  "/getId";
+
+    /*
+     *  Avatar Profile Constants
+    */
+
+    public static final String AVATAR_BASE_URL =  "/avatar";
+    public static final String GET_ALL_AVATAR_PROFILE =  "/getall/{profileType}";
+    public static final String GET_AVATAR_PROFILE =  "/{avatarId}";
+    public static final String SEARCH =  "/search/{searchString}";
+    public static final String GENERATE_AVATAR_IMAGAES =  "/generate-images";
+    public static final String GET_GENERATED_AVATAR_IMAGAES =  "/generate-images/{requestId}";
+    public static final String CREATE_AVATAR_IMAGAES =  "/create";
+
+    /*
+     * Screens Controller Constants
+    */
+    public static final String SCREENS_BASE_URL =  "/screen";
+    public static final String GET_SCREEN =  "/{screenType}";
+    public static final String GET_SUB_CATEGORIES =  "/sub_categories";
+
+    /*
+     *  Chat Constants
+    */
+
+    public static final String CHAT_BASE_URL =  "/chat";
+    public static final String GET_ALL_CHAT =  "/getall/{userId}";
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   //gift constants
+	public static final String GIFT= "/gift";
+	
+	public static final String  GET_ALL_GIFTS=  "/getAllGifts";
+	public static final String  GET_GIFT=  "/getGift";
+	public static final String DELETE_GIFT="/deleteGift";
+	public static final String UPDATE_GIFT="/updateGift";
+	public static final String Save_GIFT="/saveGift";
+	
+
+	//gift purchased constants
+	public static final String SAVE_GIFT_PURCHASE="/subscribeForGift";
+	public static final String DELETE_GIFT_PURCHASE="/deleteGiftPurchase";
+	public static final String UPDATE_GIFT_PURCHASE="/updateGiftPurchase";
+	public static final String GET_ALL_GIFT_PURCHASE="/getAllGiftPurchase";
+	public static final String GET_GIFT_PURCHASE="/getGiftPurchase";
+	
+	
+	
+	
+	//Diamond pack constants
+	
+	public static final String DIAMOND="/diamond";
+	
+	
+	public static final String  GET_ALL_DIAMONDS_PACKS=  "/getAllDiamondPacks";
+	public static final String  GET_DIAMONDS_PACK=  "/getDiamondPacks";
+	public static final String DELETE_DIAMONDS_PACK="/deleteDiamondPacks";
+	public static final String UPDATE_DIAMONDS_PACK="/updateDiamondPacks";
+	public static final String Save_DIAMONDS_PACK="/saveDiamondPacks";
+	
+
+	// Diamond pack purchased
+	public static final String SAVE_DIAMONDS_PACK_PURCHASE="/subscribeForDiamond";
+	public static final String DELETE_DIAMONDS_PACK_PURCHASE="/deleteDiamondPackPurchase";
+	public static final String UPDATE_DIAMONDS_PACK_PURCHASE="/updateDiamondPackPurchase";
+	public static final String GET_ALL_DIAMONDS_PACK_PURCHASE="/getAllDiamondPackPurchase";
+	public static final String GET_DIAMONDS_PACK_PURCHASE="/getDiamondPackPurchase";
+	
+	
+	
+	
+	//diamond usage rate constants
+	public static final String  GET_ALL_DIAMONDS_USAGE_RATE=  "/getAllDiamondUsageRate";
+	public static final String  GET_DIAMONDS_USAGE_RATE=  "/getDiamondUsageRate";
+	public static final String DELETE_DIAMONDS_USAGE_RATE="/deleteDiamondUsageRate";
+	public static final String UPDATE_DIAMONDS_USAGE_RATE="/updateDiamondUsageRate";
+	public static final String Save_DIAMONDS_USAGE_RATE="/saveDiamondUsageRate";
+	public static final String UPDATE_USAGE_RATE="/updateUsageRate";
+
+	
+	
+    
+    
+    
+    
+}

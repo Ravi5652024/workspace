@@ -1,0 +1,9 @@
+package com.api.avatarbackend.entities;
+
+public class Gift {
+
+	private String giftId;
+    private String giftName;
+    private int initialCount; // Initial count of this gift
+
+}

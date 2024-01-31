@@ -1,0 +1,129 @@
+[
+  {
+    "collection": "global_config",
+    "data": [
+      {
+        "key": "globalizedMessages",
+        "value": {
+          "SERVER_ERROR": {
+            "en": "network issue. Please retry in a few minutes",
+            "th": "network issue. Please retry in a few minutes TH"
+          },
+          "INVALID_PARAMETERS": {
+            "en": "invalid parameters",
+            "th": "invalid parameters TH"
+          },
+          "USERNAME_AREADY_EXIST": {
+            "en": "username already exist",
+            "th": "username already exist TH"
+          },
+          "SIGNUP_SUCCESSFULY": {
+            "en": "register successfuly",
+            "th": "register successfuly TH"
+          },
+          "INVALID_CRED": {
+            "en": "invalid credentials",
+            "th": "invalid credentials TH"
+          },
+          "LOGIN_SUCCESSFULY": {
+            "en": "login successfuly",
+            "th": "login successfuly TH"
+          },
+          "PROFILE_UPDATED": {
+            "en": "profile updated successfuly",
+            "th": "profile updated successfuly TH"
+          },
+          "OPERATOR_EXIST": {
+            "en": "operator already exist",
+            "th": "operator already exist TH"
+          },
+          "OPERATOR_ADD_SUCCESSFULY": {
+            "en": "operator added successfuly",
+            "th": "operator added successfuly TH"
+          },
+          "INVALID_OPERATOR_ID": {
+            "en": "invalid operator id",
+            "th": "invalid operator id TH"
+          },
+          "OPERATOR_UPDATED_SUCCESSFULY": {
+            "en": "operator updated successfuly",
+            "th": "operator updated successfuly TH"
+          }
+        }
+      },
+      {
+        "key": "genders",
+        "value": {
+          "en": "MALE,FEMALE,NON BINARY",
+          "th": "MALE,FEMALE,NON BINARY"
+        }
+      },
+      {
+        "key": "masterOTP",
+        "value": "12345"
+      },
+      {
+        "key": "cms_generateJWTAPI",
+        "value": "https://cmsapisv2.bngrenew.com/authenticate"
+      },
+      {
+        "key": "cms_getScreenDataAPI",
+        "value": "https://cmsapisv2.bngrenew.com/get-authorised-template"
+      },
+      {
+        "key": "cms_getSubCatogriesAPI",
+        "value": "https://cmsapisv2.bngrenew.com/search-by-category"
+      },
+      {
+        "key": "cms_pageSize",
+        "value": "10"
+      }
+    ]
+  },
+  {
+    "collection": "screen_config",
+    "data": [
+      {
+        "key" : "content",
+        "value" : null,
+        "currentVersion" : "v1",
+        "operatorUuId" : 0
+      },
+      {
+        "key" : "home",
+        "value" : null,
+        "currentVersion" : "v1",
+        "operatorUuId" : 0
+      },
+      {
+        "key" : "packs",
+        "value" : null,
+        "currentVersion" : "v1",
+        "operatorUuId" : 0
+      },
+      {
+        "key" : "signup",
+        "value" : null,
+        "currentVersion" : "v1",
+        "operatorUuId" : 0
+      }
+    ]
+  },
+  {
+    "collection": "operator_config",
+    "data": [
+      {
+        "uuid":0,
+        "name": "default",
+        "country": "default",
+        "defaultLanguage" : "default",
+        "languageSupport" : [
+          "en",
+          "th"
+        ],
+        "cmsUsername": "coolApp",
+        "cmsPassword": "WtobzXgWljOn1EcWKI3A2w=="
+      }
+    ]
+  }
+]

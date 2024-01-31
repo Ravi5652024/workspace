@@ -1,0 +1,6 @@
+
+ñ
+java:S1488"bImmediately return this expression instead of assigning it to the temporary variable "newHistory".b fe1fd776e3afa9d45e50d49e6e0c9e42h
+ç	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.b b40660a41c765e60706e791b8669ff42h
+u
+java:S1128"ARemove this unused import 'com.example.demo.request.GiftRequest'.b 28153ffff5a6959a4996f6eca5479a5ah

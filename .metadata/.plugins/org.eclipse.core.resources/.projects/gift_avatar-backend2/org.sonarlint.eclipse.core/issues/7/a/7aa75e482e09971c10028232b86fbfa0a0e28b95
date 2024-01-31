@@ -1,0 +1,36 @@
+
+c
+java:S3740p"/Provide the parametrized type for this generic.b 01b400a7e6862c97c1443cc55dca419ch
+c
+java:S3740t"/Provide the parametrized type for this generic.b 01b400a7e6862c97c1443cc55dca419ch
+c
+java:S3740w"/Provide the parametrized type for this generic.b 01b400a7e6862c97c1443cc55dca419ch
+d
+java:S3740°"/Provide the parametrized type for this generic.b 01b400a7e6862c97c1443cc55dca419ch
+d
+java:S3740µ"/Provide the parametrized type for this generic.b 01b400a7e6862c97c1443cc55dca419ch
+d
+java:S3740¹"/Provide the parametrized type for this generic.b 01b400a7e6862c97c1443cc55dca419ch
+~
+java:S1192H"JDefine a constant instead of duplicating this literal "NOT_FOUND" 3 times.b f7a895700b3a1beda607594c957a27c3h
+~
+java:S1192w"JDefine a constant instead of duplicating this literal "Not Found" 3 times.b 6f4c7c42c6241454c73d6955d99036d9h
+Ž
+java:S1192H"ZDefine a constant instead of duplicating this literal "DIAMOND_DETAILS_NOT_FOUND" 3 times.b fbc7fc17c594d0e0604b88837daa7722h
+t
+java:S4684A"@Replace this persistent entity with a simple POJO or DTO object.b 2cfda88af323e684350ecf8126c9466eh
+†
+java:S6204U"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'b f31c9542f92d797a57d6f9bafca179cdh
+t
+java:S4684^"@Replace this persistent entity with a simple POJO or DTO object.b 92be43c31bf2b0339514df07af5d1623h
+t
+java:S4684p"@Replace this persistent entity with a simple POJO or DTO object.b 2cfda88af323e684350ecf8126c9466eh
+u
+java:S4684š"@Replace this persistent entity with a simple POJO or DTO object.b 89baa97c2cbea30c5ec568a9cf317864h
+_	java:S106œ"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+|
+java:S4684á"@Replace this persistent entity with a simple POJO or DTO object.8»òßûÕ1b 0931dc7500510dfff6a8deba8b9be9fch
+o
+java:S1128"4Remove this unused import 'org.bson.types.ObjectId'.8Ì·°üÕ1b 1b52143c4b4e6ed85ab80b076936bc34h
+Œ
+java:S1128"QRemove this unused import 'org.springframework.web.bind.annotation.PathVariable'.8Ì·°üÕ1b 3fefe08136e702626d45679e08cd9028h

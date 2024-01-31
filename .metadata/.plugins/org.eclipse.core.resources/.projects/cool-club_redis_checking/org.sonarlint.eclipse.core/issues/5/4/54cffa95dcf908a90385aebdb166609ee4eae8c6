@@ -1,0 +1,11 @@
+
+X
+java:S2629B"$Invoke method(s) only conditionally.b efa255ae97aed8dd697bcf7fd9c41737h
+X
+java:S2629O"$Invoke method(s) only conditionally.b 98e1227238245c4db1d46db8694d1bc4h
+X
+java:S2629Q"$Invoke method(s) only conditionally.b efa255ae97aed8dd697bcf7fd9c41737h
+o	java:S1254"<This block of commented-out lines of code should be removed.b b659d33fe8036d6e500bd6ea35720ad3h
+o	java:S125I"<This block of commented-out lines of code should be removed.b b659d33fe8036d6e500bd6ea35720ad3h
+~
+java:S1128"JRemove this unused import 'com.api.coolclub.models.response.GetScreenRes'.b 3c6c433247b915a66ab154df83eee6f0h

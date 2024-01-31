@@ -1,0 +1,11 @@
+package com.api.avatarbackend.entities;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public static class UsageDetails {
+    private Double fixedRate;
+    private Double pulseRate;
+    private String pulseUnit;
+    // Add more properties as needed
+}

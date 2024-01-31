@@ -1,0 +1,17 @@
+
+ç	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.b 92c3a8a7b18bc583126566bd438d2165h
+\	java:S108"")Either remove or fill this block of code.b f95b70fdc3088560732a5ac135644506h
+o	java:S125&"<This block of commented-out lines of code should be removed.b d847fcb1bd6f6510012105c5c4b85ae0h
+t
+java:S1128"@Remove this unused import 'org.springframework.http.HttpStatus'.b 112fa9b8212b84b40482a74f5181f850h
+x
+java:S1128"DRemove this unused import 'org.springframework.http.ResponseEntity'.b aaaba253df39297822d324a05b763895h
+{
+java:S1128	"GRemove this unused import 'com.api.avatarbackend.config.GeneralConfig'.b 6b50bd70fe2fe85d34ad279da6cf95e4h
+Å
+java:S1128
+"MRemove this unused import 'com.api.avatarbackend.models.response.GenericRes'.b abe99d10920a9bf3dff845d844e2bca9h
+v
+java:S1128"BRemove this unused import 'com.api.avatarbackend.utils.Constants'.b b377f87a2a0bdf9e082aab1c89dc56e6h
+b
+java:S1068".Remove this unused "cmsService" private field.b 2a6de9aa00de461c3a94adba8f9278f0h

@@ -1,0 +1,26 @@
+
+c
+java:S3740,"/Provide the parametrized type for this generic.b 01b400a7e6862c97c1443cc55dca419ch
+c
+java:S3740/"/Provide the parametrized type for this generic.b 01b400a7e6862c97c1443cc55dca419ch
+h
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.b 275b9778ea2ddb3b8c20ea1d3578f784h
+a
+java:S1128"-Remove this unused import 'java.util.Arrays'.b 54e9e610d6bdce198c93f75733e99130h
+_
+java:S1128"+Remove this unused import 'java.util.List'.b 647165940d2971f696436f6a7da1f89dh
+t
+java:S1128"@Remove this unused import 'org.springframework.http.HttpStatus'.b 112fa9b8212b84b40482a74f5181f850h
+ƒ
+java:S1128
+"ORemove this unused import 'org.springframework.web.bind.annotation.GetMapping'.b f7daf51c8d1fae012d7722cdfa37e0f6h
+t
+java:S1128"@Remove this unused import 'com.example.demo.entity.GiftDetails'.b 37e7e7c7fda37a026239b2b26533cdcfh
+o
+java:S1128";Remove this unused import 'com.example.demo.repo.GiftRepo'.b 24dd27aacfbcffe3ec1cbccea8c619dah
+u
+java:S1128"ARemove this unused import 'com.example.demo.request.GiftRequest'.b 28153ffff5a6959a4996f6eca5479a5ah
+w
+java:S1128"CRemove this unused import 'com.example.demo.response.GiftResponse'.b fdcfd8e8edaea56b9656848f31240201h
+~
+java:S1128"JRemove this unused import 'com.example.demo.service.GiftServiceInterface'.b 4d312ab72f3bdd4b13c518d96355fdb6h

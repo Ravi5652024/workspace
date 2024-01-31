@@ -1,0 +1,35 @@
+
+í
+java:S1104."^Make globalVariablesMap a static final constant or non-public and provide accessors if needed.b c882ce61b1599266e8eada950d43cf6ch
+ä
+java:S1104/"VMake gendersMap a static final constant or non-public and provide accessors if needed.b 57f13c400c266bfe2eee12fc3c172c8bh
+ê
+java:S11040"\Make operatorsDetails a static final constant or non-public and provide accessors if needed.b 8c7035c582c0aa731e7a02b0f4e6b3c7h
+í
+java:S11041"^Make globalizedMessages a static final constant or non-public and provide accessors if needed.b e94d541183a9b52e075eee88a4ecddd0h
+l
+java:S1444."8Make this "public static globalVariablesMap" field finalb c882ce61b1599266e8eada950d43cf6ch
+d
+java:S1444/"0Make this "public static gendersMap" field finalb 57f13c400c266bfe2eee12fc3c172c8bh
+j
+java:S14440"6Make this "public static operatorsDetails" field finalb 8c7035c582c0aa731e7a02b0f4e6b3c7h
+l
+java:S14441"8Make this "public static globalizedMessages" field finalb e94d541183a9b52e075eee88a4ecddd0h
+X
+java:S2629J"$Invoke method(s) only conditionally.b 3f08b862133e4fe6e21178ce6e6e8dbfh
+X
+java:S2629K"$Invoke method(s) only conditionally.b ee3420887f02c794eef22a3b3584e9e3h
+Y
+java:S2629Ü"$Invoke method(s) only conditionally.b 1b2c6e19fa38780b8bc16e7d35fc9c42h
+Q
+java:S2386."Make this member "protected".b c882ce61b1599266e8eada950d43cf6ch
+Q
+java:S2386/"Make this member "protected".b 57f13c400c266bfe2eee12fc3c172c8bh
+Q
+java:S23860"Make this member "protected".b 8c7035c582c0aa731e7a02b0f4e6b3c7h
+Q
+java:S23861"Make this member "protected".b e94d541183a9b52e075eee88a4ecddd0h
+j
+java:S2696?"6Make the enclosing method "static" or remove this set.b c882ce61b1599266e8eada950d43cf6ch
+k
+java:S2696Å"6Make the enclosing method "static" or remove this set.b 8c7035c582c0aa731e7a02b0f4e6b3c7h

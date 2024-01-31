@@ -1,0 +1,14 @@
+package com.example.demo.servicesImplementation;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.GiftPurchasedHistory;
+import com.example.demo.repo.GiftPurchasedHistoryRepo;
+import com.example.demo.request.GiftRequest;
+import com.example.demo.service.GiftSubscriptionServiceInterface;
+
+@Service
+public class GiftSubscriptionService implements GiftSubscriptionServiceInterface {
+
+	
+}

@@ -1,0 +1,53 @@
+package com.example.demo.utils;
+
+public class URLConstants {
+	
+	private URLConstants() {
+		
+	}
+	
+	public static final String API_VERSION =  "/v1";
+	public static final String GIFT= "/gift";
+	
+	public static final String  GET_ALL_GIFTS=  "/getAllDetails";
+	public static final String  GET_GIFT=  "/getGift";
+	public static final String DELETE_GIFT="/deleteGift";
+	public static final String UPDATE_GIFT="/updateGift";
+	public static final String Save_GIFT="/saveGift";
+	
+
+	
+	public static final String SAVE_GIFT_PURCHASE="/subscribeForGift";
+	public static final String DELETE_GIFT_PURCHASE="/deleteGiftPurchase";
+	public static final String UPDATE_GIFT_PURCHASE="/updateGiftPurchase";
+	public static final String GET_ALL_GIFT_PURCHASE="/getAllGiftPurchase";
+	public static final String GET_GIFT_PURCHASE="/getGiftPurchase";
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static final String DIAMOND="/diamond";
+	public static final String DIAMOND_DETAIL="/getAllDetails";
+	
+	public static final String GET_DIAMOND="/subscribeForDiamond";
+}

@@ -1,0 +1,9 @@
+package com.api.avatarbackend.repository;
+
+import com.example.demo.entity.GiftPurchasedHistory;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface GiftPurchasedHistoryRepo extends MongoRepository<GiftPurchasedHistory, String> {
+
+}

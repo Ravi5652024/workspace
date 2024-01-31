@@ -1,0 +1,5 @@
+
+…
+java:S1128"QRemove this unused import 'org.springframework.context.annotation.Configuration'.b ff106b593378e14441730e34adf95249h
+[
+java:S1068"'Remove this unused "log" private field.b dc1d71bbb5c4d2a5e936db79ef10c19fh

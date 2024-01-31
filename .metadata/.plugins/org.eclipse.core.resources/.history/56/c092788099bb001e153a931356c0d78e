@@ -1,0 +1,13 @@
+package com.example.demo.request;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class DiamondPurchasingHistoryRequest {
+	
+	private String giftId;
+	private String userId;
+	private String currency;
+	private float cost;
+
+}

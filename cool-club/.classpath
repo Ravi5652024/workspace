@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="cool-club/src/main/java"/>
+	<classpathentry kind="src" path="cool-club/src/test/java"/>
+	<classpathentry kind="lib" path="cool-club/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="cool-club/bin/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="output" path="cool-club/target/classes"/>
+</classpath>

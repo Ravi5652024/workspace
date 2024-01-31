@@ -1,0 +1,47 @@
+package com.api.avatarbackend.entities;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.HashMap;
+
+import org.springframework.data.annotation.Id;
+@Document(collection="diamond_usage_rate")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class DiamondUsageRate {
+	
+	@Id
+	private String id;
+//	private String usage_rate;
+	private String  operatorId;
+	
+	//remove this after using
+	private Rate diamondRate;
+	 private Map<String, UsageDetails> usageDetailsMap = new HashMap<>();
+
+	
+	
+ 
+	
+    private LocalDateTime createdOn;
+
+    private LocalDateTime updatedOn;
+
+    public Rate getDiamondRate() {
+        return diamondRate;
+    }
+
+    public void setDiamondRate(Rate diamondRate) {
+        this.diamondRate = diamondRate;
+    }
+	
+	
+
+}

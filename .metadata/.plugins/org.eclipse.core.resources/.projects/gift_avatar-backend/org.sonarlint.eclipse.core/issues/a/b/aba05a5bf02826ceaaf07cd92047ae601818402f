@@ -1,0 +1,24 @@
+
+ã
+java:S1192A"WDefine a constant instead of duplicating this literal "GIFT_DETAILS_NOT_FOUND" 3 times.b 667447d0cc5f1bb1db76415b81342aa2h
+~
+java:S1192A"JDefine a constant instead of duplicating this literal "NOT_FOUND" 3 times.b f7a895700b3a1beda607594c957a27c3h
+j
+java:S3740i"/Provide the parametrized type for this generic.8†ﬁ´Ã’1b 01b400a7e6862c97c1443cc55dca419ch
+j
+java:S3740m"/Provide the parametrized type for this generic.8†ﬁ´Ã’1b 01b400a7e6862c97c1443cc55dca419ch
+j
+java:S3740p"/Provide the parametrized type for this generic.8†ﬁ´Ã’1b 01b400a7e6862c97c1443cc55dca419ch
+{
+java:S4684:"@Replace this persistent entity with a simple POJO or DTO object.8†ﬁ´Ã’1b 9379510057a079931eaa142e5f9ff8b9h
+ç
+java:S6204N"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'8†ﬁ´Ã’1b f31c9542f92d797a57d6f9bafca179cdh
+{
+java:S4684W"@Replace this persistent entity with a simple POJO or DTO object.8†ﬁ´Ã’1b 9379510057a079931eaa142e5f9ff8b9h
+{
+java:S4684i"@Replace this persistent entity with a simple POJO or DTO object.8†ﬁ´Ã’1b 9379510057a079931eaa142e5f9ff8b9h
+w	java:S125»"<This block of commented-out lines of code should be removed.8Ù‘…Û’1b 33696854d6ecab04aa41f3534abdd8f8h
+é
+java:S1128"SRemove this unused import 'com.api.avatarbackend.entities.DiamondPurchasedHistory'.8Ù‘…Û’1b a69e461cefda0e0bd6100783cf38f360h
+õ
+java:S1128"`Remove this unused import 'com.api.avatarbackend.models.request.DiamondPurchasedHistoryRequest'.8Ù‘…Û’1b 3875bb063ba39de24601ce10e3ecedbfh

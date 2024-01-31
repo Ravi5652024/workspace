@@ -1,0 +1,12 @@
+package com.example.demo.servicesImplementation;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.service.DiamondSubscriptionServiceInterface;
+
+@Service
+
+public class DiamondSubsciptionService implements DiamondSubscriptionServiceInterface{
+
+	
+}

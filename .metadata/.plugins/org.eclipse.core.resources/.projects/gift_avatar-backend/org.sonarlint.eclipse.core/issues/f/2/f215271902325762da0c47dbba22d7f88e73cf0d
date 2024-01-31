@@ -1,0 +1,9 @@
+
+u
+java:S1226/"AIntroduce a new variable instead of reusing the parameter "lang".b 7572559ca86e781ba8fe8073a0b725c6h
+{
+java:S12260"GIntroduce a new variable instead of reusing the parameter "operatorId".b 9461b85cd6e98dd8d070bbb7d9a3ad51h
+†
+java:S1128"RRemove this unused import 'com.api.avatarbackend.models.response.GetAllAvatarRes'.b 5106a5e065198ddc3333df61b2ff9480h
+b
+java:S1068%".Remove this unused "helperUtil" private field.b 989c347efebf042a997f1fbba0f8a191h

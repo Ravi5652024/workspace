@@ -1,0 +1,26 @@
+package com.api.avatarbackend.entities;
+
+import org.springframework.stereotype.Component;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Component
+@Data
+
+@NoArgsConstructor
+
+
+//Remove this
+public class Rate {
+	private Double call;
+    private Double image;
+    
+    public Rate(Double call, Double image) {
+        this.call = call;
+        this.image = image;
+    }
+
+}

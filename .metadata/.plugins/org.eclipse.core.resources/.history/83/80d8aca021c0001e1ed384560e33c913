@@ -1,0 +1,14 @@
+package com.api.avatarbackend.models.request;
+
+import lombok.Data;
+
+@Data
+
+public class DiamondSpendRequest {
+	
+	private String userId;
+    private int diamondsToSpend;
+    private double duration;
+    private String operatorId;
+
+}

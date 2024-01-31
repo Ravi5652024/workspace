@@ -1,0 +1,29 @@
+package com.api.avatarbackend.entities;
+
+import java.time.LocalDateTime;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Document(collection="user_purchase_profile")
+@Component
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class UserPurchaseProfile {
+	@Id
+	private String id;
+	private String userId;
+	private String purchaseType;
+	private LocalDateTime purhaseTime;
+	private String transaction_type;
+	private int diamond;
+	private int remainingDamond;
+	
+
+}

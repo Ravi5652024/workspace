@@ -1,0 +1,8 @@
+
+p
+java:S1854-"<Remove this useless assignment to local variable "authUser".b 00b2bf2be0a0d5592ff9882517b0ecaeh
+o	java:S125,"<This block of commented-out lines of code should be removed.b b659d33fe8036d6e500bd6ea35720ad3h
+a
+java:S1481-"-Remove this unused "authUser" local variable.b 525c2a34a501bdf3be561d96c7b571a2h
+f
+java:S1068!"2Remove this unused "screensService" private field.b 0773780378e4bc524435c6c3ab5bc53fh

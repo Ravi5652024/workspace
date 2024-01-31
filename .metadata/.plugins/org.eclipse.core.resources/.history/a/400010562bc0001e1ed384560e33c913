@@ -1,0 +1,70 @@
+package com.api.avatarbackend.services;
+
+import java.util.List;
+
+import com.api.avatarbackend.entities.GiftDetails;
+import com.api.avatarbackend.entities.GiftPurchasedHistory;
+import com.api.avatarbackend.models.request.GiftPurchasedHistoryRequest;
+import com.api.avatarbackend.models.request.GiftRequest;
+
+
+
+public interface GiftServiceInterface {
+
+	
+	
+	
+	
+	
+	
+	public GiftDetails saveGiftDetails(GiftRequest giftRequest);
+
+	public GiftDetails updateGiftDetails(GiftDetails giftDetails);
+		
+    public GiftDetails getGiftDetailsById(GiftDetails giftDetails);
+		
+    public List<GiftDetails> getAllGiftDetails();
+
+    public boolean deleteGiftDetails(GiftDetails giftDetails);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public GiftPurchasedHistory saveGiftPurchasedHistory(GiftPurchasedHistoryRequest historyRequest);
+
+	
+    public GiftPurchasedHistory getGiftPurchasedHistoryById(GiftPurchasedHistory hRequest);
+		
+    public List<GiftPurchasedHistory> getAllGiftPurchasedHistoryByUserId(GiftPurchasedHistoryRequest GiftPurchasedHistoryRequest);
+
+   
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

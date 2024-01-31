@@ -1,0 +1,5 @@
+package com.api.avatarbackend.models.request;
+
+public class GiftSendRequest {
+
+}

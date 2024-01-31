@@ -1,0 +1,51 @@
+package com.example.demo.helperclasses;
+
+import java.time.LocalDateTime;
+
+import org.springframework.stereotype.Component;
+
+import com.example.demo.entity.DiamondDetails;
+import com.example.demo.entity.GiftDetails;
+import com.example.demo.entity.GiftHistory;
+import com.example.demo.request.DiamondRequest;
+import com.example.demo.request.GiftHistoryRequest;
+import com.example.demo.request.GiftRequest;
+import com.example.demo.response.DiamondResponse;
+import com.example.demo.response.GiftResponse;
+
+@Component
+
+public class DiamondHelper {
+	
+	
+	//This function will be remove afterward
+	public DiamondDetails mapToGiftDetails(DiamondRequest diamondRequest) {
+		DiamondDetails diamondDetails = new DiamondDetails(); 
+		diamondDetails.setUrl(diamondRequest.getUrl());
+		diamondDetails.setCost(diamondRequest.getCost());
+		diamondDetails.setCurrency(diamondRequest.getCurrency());
+		diamondDetails.setDiamond_Count(diamondRequest.getDiamond_Count());
+		return diamondDetails;
+	}
+
+	// map giftDetail to giftresponse
+	public DiamondResponse mapToGiftResponse(DiamondDetails diamondDetails) {
+		DiamondResponse diamondResponse = new DiamondResponse();
+		diamondResponse.setId(diamondDetails.getId());
+		diamondResponse.setUrl(giftDetails.getUrl());
+		giftResponse.setCost(giftDetails.getCost());
+		giftResponse.setCurrency(giftDetails.getCurrency());
+		return giftResponse;
+	}
+
+	// map giftHistory to giftDetail
+	public GiftHistory mapToGiftDetails(GiftHistoryRequest giftHistoryRequest) {
+		GiftHistory giftHistory = new GiftHistory();
+		giftHistory.setGiftDetailId(giftHistoryRequest.getGiftId());
+		giftHistory.setUserId(giftHistoryRequest.getUserId());
+		giftHistory.setPurchaseOn(LocalDateTime.now());
+		return giftHistory;
+	}
+	
+
+}

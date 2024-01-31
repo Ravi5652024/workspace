@@ -1,0 +1,26 @@
+
+c
+java:S3740k"/Provide the parametrized type for this generic.b 01b400a7e6862c97c1443cc55dca419ch
+c
+java:S3740o"/Provide the parametrized type for this generic.b 01b400a7e6862c97c1443cc55dca419ch
+c
+java:S3740r"/Provide the parametrized type for this generic.b 01b400a7e6862c97c1443cc55dca419ch
+‹
+java:S1192C"WDefine a constant instead of duplicating this literal "GIFT_DETAILS_NOT_FOUND" 3 times.b 667447d0cc5f1bb1db76415b81342aa2h
+~
+java:S1192C"JDefine a constant instead of duplicating this literal "NOT_FOUND" 3 times.b f7a895700b3a1beda607594c957a27c3h
+t
+java:S4684<"@Replace this persistent entity with a simple POJO or DTO object.b 9379510057a079931eaa142e5f9ff8b9h
+†
+java:S6204P"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'b f31c9542f92d797a57d6f9bafca179cdh
+t
+java:S4684Y"@Replace this persistent entity with a simple POJO or DTO object.b 9379510057a079931eaa142e5f9ff8b9h
+t
+java:S4684k"@Replace this persistent entity with a simple POJO or DTO object.b 9379510057a079931eaa142e5f9ff8b9h
+w	java:S125Ê"<This block of commented-out lines of code should be removed.8›½¦ôÕ1b 33696854d6ecab04aa41f3534abdd8f8h
+Ž
+java:S1128"SRemove this unused import 'com.api.avatarbackend.entities.DiamondPurchasedHistory'.8›½¦ôÕ1b a69e461cefda0e0bd6100783cf38f360h
+›
+java:S1128"`Remove this unused import 'com.api.avatarbackend.models.request.DiamondPurchasedHistoryRequest'.8›½¦ôÕ1b 3875bb063ba39de24601ce10e3ecedbfh
+
+java:S1128"URemove this unused import 'com.api.avatarbackend.models.request.DiamondSpendRequest'.8Ø­¸ûÕ1b b8a3dee29742e85793cdc40b6e0e5e4bh

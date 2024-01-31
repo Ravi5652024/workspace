@@ -1,0 +1,16 @@
+package com.api.avatarbackend.repository;
+
+import java.util.List;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.api.avatarbackend.entities.DiamondPurchasedHistory;
+import com.api.avatarbackend.entities.UserProfile;
+import com.api.avatarbackend.entities.UserPurchaseProfile;
+
+public interface UserPurchaseProfileRepo extends MongoRepository<UserPurchaseProfile, String>{
+
+	public UserPurchaseProfile findByUserId(String userId);
+	
+	
+}

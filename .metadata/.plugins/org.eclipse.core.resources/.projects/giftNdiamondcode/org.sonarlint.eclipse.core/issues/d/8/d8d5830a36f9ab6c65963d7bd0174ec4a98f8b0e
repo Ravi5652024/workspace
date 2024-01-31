@@ -1,0 +1,41 @@
+
+├
+java:S6204Q"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'b f31c9542f92d797a57d6f9bafca179cdh
+j
+java:S3740l"/Provide the parametrized type for this generic.8Л╚гду1b 01b400a7e6862c97c1443cc55dca419ch
+j
+java:S3740p"/Provide the parametrized type for this generic.8Л╚гду1b 01b400a7e6862c97c1443cc55dca419ch
+j
+java:S3740s"/Provide the parametrized type for this generic.8Л╚гду1b 01b400a7e6862c97c1443cc55dca419ch
+k
+java:S3740З"/Provide the parametrized type for this generic.8Л╚гду1b 01b400a7e6862c97c1443cc55dca419ch
+k
+java:S3740Ч"/Provide the parametrized type for this generic.8Л╚гду1b 01b400a7e6862c97c1443cc55dca419ch
+k
+java:S3740│"/Provide the parametrized type for this generic.8Л╚гду1b 01b400a7e6862c97c1443cc55dca419ch
+┘
+java:S1192D"JDefine a constant instead of duplicating this literal "NOT_FOUND" 6 times.8Л╚гду1b f7a895700b3a1beda607594c957a27c3h
+≤
+java:S1192р"\Define a constant instead of duplicating this literal "PURCHASED_HISTORY_NOT_FOUND" 3 times.8Л╚гду1b 1f4e49a65c17880ccd542875f49e486dh
+▓
+java:S1192D"WDefine a constant instead of duplicating this literal "GIFT_DETAILS_NOT_FOUND" 3 times.8Л╚гду1b 667447d0cc5f1bb1db76415b81342aa2h
+{
+java:S4684="@Replace this persistent entity with a simple POJO or DTO object.8Л╚гду1b 9379510057a079931eaa142e5f9ff8b9h
+{
+java:S4684Z"@Replace this persistent entity with a simple POJO or DTO object.8Л╚гду1b 9379510057a079931eaa142e5f9ff8b9h
+{
+java:S4684l"@Replace this persistent entity with a simple POJO or DTO object.8Л╚гду1b 9379510057a079931eaa142e5f9ff8b9h
+|
+java:S4684к"@Replace this persistent entity with a simple POJO or DTO object.8Л╚гду1b cf11a639b32a8e822ab36c0204752e2bh
+▌
+java:S6204ъ"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'8Л╚гду1b f31c9542f92d797a57d6f9bafca179cdh
+|
+java:S4684Х"@Replace this persistent entity with a simple POJO or DTO object.8Л╚гду1b cf11a639b32a8e822ab36c0204752e2bh
+|
+java:S4684З"@Replace this persistent entity with a simple POJO or DTO object.8Е⌡йду1b cf11a639b32a8e822ab36c0204752e2bh
+~
+java:S1128"CRemove this unused import 'com.example.demo.entity.DiamondDetails'.8■╡нду1b cce378f3e15eacf0a5220b193286db8ch
+
+java:S1128"DRemove this unused import 'com.example.demo.request.DiamondRequest'.8■╡нду1b c85d0ab771ca3b5edb27152f4f0ad59bh
+~
+java:S1128"CRemove this unused import 'com.example.demo.response.GiftResponse'.8■╡нду1b fdcfd8e8edaea56b9656848f31240201h

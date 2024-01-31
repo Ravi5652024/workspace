@@ -1,0 +1,46 @@
+package com.example.demo.response;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import com.api.coolclub.models.response.GenericRes;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+
+@Component
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class GenericRes<T> {
+
+	private Integer statuscode;
+	private String status;
+	private String message;
+
+	@JsonProperty("data")
+	private T data;
+
+	public GenericRes(Integer statuscode, String status, String message, T data) {
+		this.statuscode = statuscode;
+		this.status = status;
+		this.message = message;
+		this.data = data;
+	}
+
+	// For now only
+
+		public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
+	}
+
+}

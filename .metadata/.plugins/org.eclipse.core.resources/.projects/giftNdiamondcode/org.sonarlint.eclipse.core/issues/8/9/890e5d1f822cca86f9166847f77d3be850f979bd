@@ -1,0 +1,22 @@
+
+ç	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.b b40660a41c765e60706e791b8669ff42h
+õ
+java:S14886"`Immediately return this expression instead of assigning it to the temporary variable "packList".8Ò∑Ïâ‘1b ed9592bb01337296d04f649b7fcb03b8h
+ù
+java:S1488÷"aImmediately return this expression instead of assigning it to the temporary variable "usagelist".8Ü¶Ç∆’1b 5a5323a84107ab7df6042517ceb82427h
+í
+java:S2259˜"VA "NullPointerException" could be thrown; "existingDiamondUsageRate" is nullable here.8Ü¶Ç∆’1b 8adc5bc2821a43ef6f3da13224dc75b8h
+è
+java:S2259V"TA "NullPointerException" could be thrown; "existingDiamondDetails" is nullable here.8Ü¶Ç∆’1b 0fd8bb1832f1d3833ab4f1b4f7603613h
+v	java:S125-"<This block of commented-out lines of code should be removed.8Ü¶Ç∆’1b 4fca059a1ef3536e7c93d7d0357af6b8h
+e	java:S106L"+Replace this use of System.out by a logger.8Ü¶Ç∆’1b bb1c3f2ea781263d3a2bb92b06a2061fh
+e	java:S106M"+Replace this use of System.out by a logger.8Ü¶Ç∆’1b bb1c3f2ea781263d3a2bb92b06a2061fh
+w	java:S125Ó"<This block of commented-out lines of code should be removed.8Ü¶Ç∆’1b 25364a8e37c931e55a21c261b87102fah
+å
+java:S3655ó"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.8±∆›∆’1b f951a103b767c443f5a608d4e4203161h
+f	java:S106ò"+Replace this use of System.out by a logger.8ﬂ˙≠«’1b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106ô"+Replace this use of System.out by a logger.8ﬂ˙≠«’1b bb1c3f2ea781263d3a2bb92b06a2061fh
+å
+java:S3655à"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.8ï„Â»’1b f951a103b767c443f5a608d4e4203161h
+o
+java:S1128"4Remove this unused import 'org.bson.types.ObjectId'.8öùÊ»’1b 1b52143c4b4e6ed85ab80b076936bc34h

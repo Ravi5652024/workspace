@@ -1,0 +1,66 @@
+package com.api.avatarbackend.services;
+
+import java.util.List;
+
+
+import com.api.avatarbackend.entities.DiamondDetails;
+import com.api.avatarbackend.entities.DiamondPurchasedHistory;
+import com.api.avatarbackend.entities.DiamondUsageRate;
+import com.api.avatarbackend.models.request.DiamondPurchasedHistoryRequest;
+import com.api.avatarbackend.models.request.DiamondSpendRequest;
+import com.api.avatarbackend.models.request.DiamondUsageRateRequest;
+import com.api.avatarbackend.models.request.UsageRateRequest;
+
+
+public interface DiamondServiceInterface {
+	
+	
+	public  DiamondDetails createDiamondDetails(com.api.avatarbackend.models.request.DiamondRequest diamondRequest);
+	public  DiamondDetails updateDiamondDetails(DiamondDetails diamondRequest);
+	public DiamondDetails getDiamondDetailsById(DiamondDetails diamondDetails);
+	public List<DiamondDetails> getAllDiamondDetails();
+	public boolean deleteDiamondDetails(DiamondDetails diamondDetail);
+	
+	
+	
+	
+	
+	
+	
+	public  DiamondPurchasedHistory saveDiamondPurchasedHistory(DiamondPurchasedHistoryRequest diamondHistoryRequest);
+
+	
+	public  DiamondPurchasedHistory getDiamondPurchasedHistoryById(DiamondPurchasedHistory diamondHistory);
+
+	
+	
+	
+	public List<DiamondPurchasedHistory> getAllDiamondPurchasedHistoryByUserId(DiamondPurchasedHistoryRequest diamondPurchasedHistoryRequest);
+	
+	
+	
+	
+
+	public DiamondUsageRate saveUsageRate(DiamondUsageRateRequest diamondUsageRequest);
+
+	public DiamondUsageRate getUsageRateById(DiamondUsageRateRequest diamondUsageRequest);
+
+	public List<DiamondUsageRate> getAllUsageRate();
+
+    public boolean deleteUsageRate(DiamondUsageRateRequest diamondUsageRequest);
+    
+    public DiamondUsageRate updateDiamondUsageRate(DiamondUsageRateRequest diamondUsageRequest);
+    
+    
+    
+    public DiamondUsageRate updateUsageRate(UsageRateRequest usageRateRequest);
+    
+    
+   
+    public boolean spendDiamondsRequest(DiamondSpendRequest diamondSpendRequest);
+    
+//    public void spendDiamondsBasedOnCallRate(String userId,int time);
+    
+    
+
+}

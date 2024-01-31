@@ -1,0 +1,18 @@
+
+î
+java:S1488I"`Immediately return this expression instead of assigning it to the temporary variable "packList".b ed9592bb01337296d04f649b7fcb03b8h
+ç	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.b 92c3a8a7b18bc583126566bd438d2165h
+à
+java:S2259i"TA "NullPointerException" could be thrown; "existingDiamondDetails" is nullable here.b 0fd8bb1832f1d3833ab4f1b4f7603613h
+Ö
+java:S3655∂"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.b f951a103b767c443f5a608d4e4203161h
+Ö
+java:S3655ù"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.b afa5eb67ed8586414c2b3bcddf8a7ffeh
+o	java:S125@"<This block of commented-out lines of code should be removed.b 4fca059a1ef3536e7c93d7d0357af6b8h
+^	java:S106_"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+^	java:S106`"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+_	java:S106∑"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+_	java:S106∏"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+_	java:S106Â"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+_	java:S106È"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+_	java:S106Ì"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh

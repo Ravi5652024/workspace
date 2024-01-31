@@ -1,0 +1,41 @@
+package com.example.demo.helperclasses;
+
+import java.time.LocalDateTime;
+
+import com.example.demo.entity.GiftDetails;
+import com.example.demo.entity.GiftPurchaseHistory;
+import com.example.demo.request.GiftPurchasingHistoryRequest;
+import com.example.demo.request.GiftRequest;
+import com.example.demo.response.GiftResponse;
+
+public class GiftHelper {
+
+	//This function will be remove afterward
+	public GiftDetails mapToGiftDetails(GiftRequest giftRequest) {
+		GiftDetails giftDetails = new GiftDetails();
+		giftDetails.setUrl(giftRequest.getUrl());
+		giftDetails.setCost(giftRequest.getCost());
+		giftDetails.setCurrency(giftRequest.getCurrency());
+		return giftDetails;
+	}
+
+	// map giftDetail to giftresponse
+	public GiftResponse mapToGiftResponse(GiftDetails giftDetails) {
+		GiftResponse giftResponse = new GiftResponse();
+		giftResponse.setId(giftDetails.getId());
+		giftResponse.setUrl(giftDetails.getUrl());
+		giftResponse.setCost(giftDetails.getCost());
+		giftResponse.setCurrency(giftDetails.getCurrency());
+		return giftResponse;
+	}
+
+	// map giftHistory to giftDetail
+	public GiftPurchaseHistory mapToGiftDetails(GiftPurchasingHistoryRequest giftHistoryRequest) {
+		GiftPurchaseHistory giftHistory = new GiftPurchaseHistory();
+		giftHistory.setGiftDetailId(giftHistoryRequest.getGiftId());
+		giftHistory.setUserId(giftHistoryRequest.getUserId());
+		giftHistory.setPurchaseOn(LocalDateTime.now());
+		return giftHistory;
+	}
+
+}

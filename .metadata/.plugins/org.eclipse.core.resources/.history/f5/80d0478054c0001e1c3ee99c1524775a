@@ -1,0 +1,255 @@
+package com.api.avatarbackend.servicesImpl;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
+
+import com.api.avatarbackend.entities.GiftDetails;
+import com.api.avatarbackend.entities.GiftPurchasedHistory;
+
+import com.api.avatarbackend.entities.UserGiftInfo;
+import com.api.avatarbackend.entities.UserProfile;
+import com.api.avatarbackend.models.request.GiftPurchasedHistoryRequest;
+import com.api.avatarbackend.models.request.GiftRequest;
+import com.api.avatarbackend.models.request.GiftSendRequest;
+import com.api.avatarbackend.repository.GiftPurchasedHistoryRepo;
+import com.api.avatarbackend.repository.GiftRepo;
+import com.api.avatarbackend.repository.UserProfileRepo;
+import com.api.avatarbackend.services.GiftServiceInterface;
+
+
+@Service
+public class GiftService implements GiftServiceInterface {
+
+	private final GiftRepo giftRepo;
+	private final GiftPurchasedHistoryRepo giftHistoryRepo;
+	private final UserProfileRepo userProfileRepo;
+	
+	
+	public GiftService(GiftRepo giftRepo,GiftPurchasedHistoryRepo giftHistoryRepo,UserProfileRepo userProfileRepo) {
+		this.giftRepo = giftRepo;
+		this.giftHistoryRepo=giftHistoryRepo;
+		this.userProfileRepo=userProfileRepo;
+	}
+
+	
+
+	
+	
+	
+	
+	@Override
+    public GiftDetails saveGiftDetails(GiftRequest giftRequest) {
+        GiftDetails giftDetails = new GiftDetails();
+        giftDetails.setUrl(giftRequest.getUrl());
+        giftDetails.setPrice(giftRequest.getPrice());
+        giftDetails.setCurrency(giftRequest.getCurrency());
+        giftDetails.setGiftName(giftRequest.getGiftName());
+        giftDetails.setOperatorId(giftRequest.getOperatorId());
+        giftDetails.setPackName(giftRequest.getPackName());
+        giftDetails.setOperatorId(giftRequest.getOperatorId());
+        giftDetails.setServiceId(giftRequest.getServiceId());
+        giftDetails.setPackId(giftRequest.getPackId());
+//        diamondDetails.setId(diamondRequest.getId());
+        giftRepo.save(giftDetails);
+        return  giftDetails;    
+	}
+	
+	
+	
+	
+	
+	
+	
+	@Override
+    public List<GiftDetails> getAllGiftDetails() {
+		List<GiftDetails> giftList = giftRepo.findAll();
+		return giftList;
+    }
+	
+
+	@Override
+    public boolean deleteGiftDetails(GiftDetails giftDetails) {
+		try {
+			String id=giftDetails.getId();
+			giftRepo.deleteById(id);
+		    return true;
+		}
+		catch(Exception e) {
+			return false;
+		}
+    }
+	
+	 @Override
+	    public GiftDetails getGiftDetailsById(GiftDetails giftDetails) {
+		 String id=giftDetails.getId();
+		 
+		 GiftDetails d=giftRepo.findById(id).orElse(null);
+		 System.out.println("gfhgfh"+id);
+		 System.out.println(d);
+	        return d;
+	    }
+	
+	 
+	 @Override
+	 public GiftDetails updateGiftDetails(GiftDetails giftDetails) {
+		 GiftDetails existingGiftDetails = giftRepo.findById(giftDetails.getId()).orElse(null);
+	     // Update fields based on your logic
+		 existingGiftDetails.setPrice(giftDetails.getPrice());
+		 existingGiftDetails.setCurrency(giftDetails.getCurrency());
+		 existingGiftDetails.setId(giftDetails.getId());
+	     giftRepo.save(existingGiftDetails);
+	     return existingGiftDetails;
+	 }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Override
+    public GiftPurchasedHistory saveGiftPurchasedHistory(GiftPurchasedHistoryRequest historyRequest) {
+        GiftPurchasedHistory purchasedHistory = new GiftPurchasedHistory();
+        purchasedHistory.setGiftId(historyRequest.getGiftId());
+        purchasedHistory.setUserId(historyRequest.getUserId());
+       purchasedHistory.setGiftName(historyRequest.getGiftName());
+       purchasedHistory.setOperatorId(historyRequest.getOperatorId());
+       purchasedHistory.setServiceId(historyRequest.getServiceId());
+       purchasedHistory.setPurchaseOn(LocalDateTime.now());
+       
+       UserProfile userProfile = userProfileRepo.findById(historyRequest.getUserId()).get();
+        return giftHistoryRepo.save(purchasedHistory);
+    }
+
+
+    @Override
+    public GiftPurchasedHistory getGiftPurchasedHistoryById(GiftPurchasedHistory request) {
+        return giftHistoryRepo.findById(request.getId()).orElse(null);
+    }
+
+ 
+    
+    @Override
+    public List<GiftPurchasedHistory> getAllGiftPurchasedHistoryByUserId(GiftPurchasedHistoryRequest giftPurchasedHistoryRequest ) {
+    	String userId=giftPurchasedHistoryRequest.getUserId();
+        return giftHistoryRepo.findByUserId(userId);
+    }
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public boolean sendGift(GiftSendRequest giftSendRequest) {
+        String userId = giftSendRequest.getUserId();
+        String giftId = giftSendRequest.getGiftId();
+
+        // Retrieve user profile
+        UserProfile userProfile = userProfileRepo.findById(userId).get();
+        if (userProfile == null) {
+             return false;
+        }
+
+        // Check if user has the specified gift
+        UserGiftInfo userGiftInfo = userProfile.getUserGiftInfo();
+        int giftCount=userGiftInfo.getCount();
+        if (giftCount>0) {
+        	
+        	userGiftInfo.decrementGiftCount();
+        	GiftPurchasedHistory giftPurchaseHistory = new GiftPurchasedHistory();
+            giftPurchaseHistory.setUserId(userId);
+            giftPurchaseHistory.setGiftId(giftId);
+            giftPurchaseHistory.setGiftName(giftSendRequest.getGiftName());
+            giftPurchaseHistory.setPurchaseOn(LocalDateTime.now());
+            giftHistoryRepo.save(giftPurchaseHistory);
+            userProfileRepo.save(userProfile);
+        	return true;
+        	
+        }
+        else
+        	return false;
+
+     
+    }        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+

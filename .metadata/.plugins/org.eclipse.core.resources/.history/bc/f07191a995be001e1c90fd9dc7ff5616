@@ -1,0 +1,39 @@
+package com.example.demo.entity;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+import java.util.Date;
+
+import org.springframework.data.annotation.Id;
+@Document(collection="diamond_usage_rate")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class DiamondUsageRate {
+	
+	@Id
+	private String Id;
+	private String usage_rate;
+	
+	private DiamondRate diamondRate;
+ 
+    private LocalDateTime createdOn;
+
+    private LocalDateTime updatedOn;
+
+    public DiamondRate getDiamondRate() {
+        return diamondRate;
+    }
+
+    public void setDiamondRate(DiamondRate diamondRate) {
+        this.diamondRate = diamondRate;
+    }
+	
+	
+
+}

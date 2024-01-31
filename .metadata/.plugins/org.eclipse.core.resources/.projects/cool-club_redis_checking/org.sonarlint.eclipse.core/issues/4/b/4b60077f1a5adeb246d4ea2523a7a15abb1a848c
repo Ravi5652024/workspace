@@ -1,0 +1,7 @@
+
+†
+java:S6204X"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'b f31c9542f92d797a57d6f9bafca179cdh
+]
+java:S1905ž"(Remove this unnecessary cast to "Float".b 6f35164d0ac60fdf2588b4045399c24bh
+t
+java:S1128"@Remove this unused import 'com.api.coolclub.redis.RedisService'.b 362b8e20493b95ced47c3f893eb2c1b1h

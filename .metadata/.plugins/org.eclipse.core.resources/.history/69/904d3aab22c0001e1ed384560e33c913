@@ -1,0 +1,51 @@
+package com.api.avatarbackend.entities;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.data.annotation.Id;
+@Document(collection="diamond_usage_rate")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class DiamondUsageRate {
+	
+	@Id
+	private String id;
+//	private String usage_rate;
+	private String  operatorId;
+	
+	//remove this after using
+
+	private Map<String, UsageDetails> usageDetailsMap = new HashMap<>();
+
+	 
+	 public DiamondUsageRate(String operatorId) {
+	        this.operatorId = operatorId;
+
+	        // Initialize map with specified values
+	        usageDetailsMap.put("image", new UsageDetails(1.0, null, null));
+	        usageDetailsMap.put("call", new UsageDetails(0.0, 0.0, "sec"));
+	        usageDetailsMap.put("audio", new UsageDetails(1.0, null, null));
+	        usageDetailsMap.put("video", new UsageDetails(1.0, null, null));
+	    }
+	
+	
+ 
+	
+    private LocalDateTime createdOn;
+
+    private LocalDateTime updatedOn;
+
+ 
+	
+
+}

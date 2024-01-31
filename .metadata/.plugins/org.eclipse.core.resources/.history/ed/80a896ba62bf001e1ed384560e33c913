@@ -1,0 +1,5 @@
+package com.api.avatarbackend.repository;
+
+public class UserPurchaseProfileRepo {
+
+}

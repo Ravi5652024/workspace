@@ -1,0 +1,392 @@
+package com.api.avatarbackend.servicesImpl;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Map;
+
+import org.bson.types.ObjectId;
+import org.springframework.stereotype.Service;
+
+import com.api.avatarbackend.entities.DiamondDetails;
+import com.api.avatarbackend.entities.DiamondPurchasedHistory;
+import com.api.avatarbackend.entities.DiamondUsageRate;
+import com.api.avatarbackend.entities.Rate;
+import com.api.avatarbackend.entities.UsageDetails;
+import com.api.avatarbackend.entities.UserProfile;
+import com.api.avatarbackend.entities.DiamondTransactionHistory;
+import com.api.avatarbackend.models.request.DiamondPurchasedHistoryRequest;
+import com.api.avatarbackend.models.request.DiamondRequest;
+import com.api.avatarbackend.models.request.DiamondUsageRequest;
+import com.api.avatarbackend.models.request.UsageRateRequest;
+import com.api.avatarbackend.repository.DiamondPurchasedHistoryRepo;
+import com.api.avatarbackend.repository.DiamondRepo;
+import com.api.avatarbackend.repository.DiamondUsageRateRepo;
+import com.api.avatarbackend.repository.UserProfileRepo;
+import com.api.avatarbackend.repository.UserPurchaseProfileRepo;
+import com.api.avatarbackend.services.DiamondServiceInterface;
+import com.api.avatarbackend.utils.Constants;
+
+
+@Service
+public class DiamondService2 implements DiamondServiceInterface {
+
+	
+	private final DiamondRepo diamondRepo;
+	private final DiamondPurchasedHistoryRepo diamondHistoryRepo;
+	private final UserProfileRepo userProfileRepo;
+	
+	 private final  DiamondUsageRateRepo diamondUsageRateRepo;
+	 private final  UserPurchaseProfileRepo  userPurchaseProfileRepo;
+	
+	public DiamondService2(DiamondRepo diamondRepo,
+			DiamondPurchasedHistoryRepo diamondHistoryRepo,
+			DiamondUsageRateRepo diamondUsageRateRepo,
+			UserPurchaseProfileRepo  userPurchaseProfileRepo,
+			UserProfileRepo userProfileRepo){
+		this.diamondRepo=diamondRepo;
+		this.diamondHistoryRepo=diamondHistoryRepo;
+		this.diamondUsageRateRepo=diamondUsageRateRepo;
+		this.userPurchaseProfileRepo=userPurchaseProfileRepo;
+		this.userProfileRepo=userProfileRepo;
+	}
+	
+	
+	
+	@Override
+    public DiamondDetails createDiamondDetails(DiamondRequest diamondRequest) {
+        DiamondDetails diamondDetails = new DiamondDetails();
+        diamondDetails.setUrl(diamondRequest.getUrl());
+        diamondDetails.setDiamondCount(diamondRequest.getDiamondCount());
+        diamondDetails.setPrice(diamondRequest.getPrice());
+        diamondDetails.setCurrency(diamondRequest.getCurrency());
+        diamondDetails.setPackId(diamondRequest.getPackId());
+        diamondDetails.setPackName(diamondRequest.getPackName());
+        diamondDetails.setServiceId(diamondRequest.getServiceId());
+    
+//        diamondDetails.setId(diamondRequest.getId());
+              diamondRepo.save(diamondDetails);
+        return  diamondDetails;     
+    }
+
+	
+	
+	@Override
+    public List<DiamondDetails> getAllDiamondDetails() {
+		List<DiamondDetails> packList = diamondRepo.findAll();
+		return packList;
+    }
+	
+
+	@Override
+    public boolean deleteDiamondDetails(DiamondDetails diamondDetail) {
+		try {
+			String id=diamondDetail.getId();
+		    diamondRepo.deleteById(id);
+		    return true;
+		}
+		catch(Exception e) {
+			return false;
+		}
+    }
+	
+	 @Override
+	    public DiamondDetails getDiamondDetailsById(DiamondDetails diamondDetails) {
+		 String id=diamondDetails.getId();
+		 
+		 DiamondDetails d=diamondRepo.findById(id).orElse(null);
+		 System.out.println("gfhgfh"+id);
+		 System.out.println(d);
+	        return d;
+	    }
+	
+	 
+	 @Override
+	 public DiamondDetails updateDiamondDetails(DiamondDetails diamondRequest) {
+	     DiamondDetails existingDiamondDetails = diamondRepo.findById(diamondRequest.getId()).orElse(null);
+	     // Update fields based on your logic
+	     existingDiamondDetails.setDiamondCount(diamondRequest.getDiamondCount());
+	     existingDiamondDetails.setPrice(diamondRequest.getPrice());
+	     existingDiamondDetails.setCurrency(diamondRequest.getCurrency());
+	     
+	     existingDiamondDetails.setId(diamondRequest.getId());
+	     return diamondRepo.save(existingDiamondDetails);
+	 }
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Override
+    public DiamondPurchasedHistory saveDiamondPurchasedHistory(DiamondPurchasedHistoryRequest diamondHistoryRequest)
+	{
+		DiamondTransactionHistory purchasedprofile = new DiamondTransactionHistory();
+    	purchasedprofile.setUserId(diamondHistoryRequest.getUserId());
+    	purchasedprofile.setTransaction_type("Buy");
+    	purchasedprofile.setDiamond(diamondHistoryRequest.getDiamondCount());
+    	purchasedprofile.setPurhaseTime(LocalDateTime.now());
+    	purchasedprofile.setPurchaseType("Diamond");
+		
+    	
+        String userId=diamondHistoryRequest.getUserId();
+        	
+        
+        //handle exception afterward  
+        
+        UserProfile userProfile=userProfileRepo.findById(userId).get();
+        userProfile.acquireDiamonds(diamondHistoryRequest.getDiamondCount(),Constants.DEFAULT_DIAMOND_VALIDITY);
+        purchasedprofile.setRemainingDamond(userProfile.getDiamondInfo().getCount());
+        userPurchaseProfileRepo.save(purchasedprofile);
+        userProfileRepo.save(userProfile);
+      
+         
+      
+        
+		
+		DiamondPurchasedHistory purchasedHistory = new DiamondPurchasedHistory();
+        
+        purchasedHistory.setDiamondPackId(diamondHistoryRequest.getDiamondPackId());
+        purchasedHistory.setUserId(diamondHistoryRequest.getUserId());
+        purchasedHistory.setDiamondCount(diamondHistoryRequest.getDiamondCount());
+        purchasedHistory.setPrice(diamondHistoryRequest.getPrice());
+        purchasedHistory.setPurchaseOn(LocalDateTime.now());
+        return diamondHistoryRepo.save(purchasedHistory);
+    }
+
+
+
+    @Override
+    public DiamondPurchasedHistory getDiamondPurchasedHistoryById(DiamondPurchasedHistory diamondHistoryRequest) {
+    	String id=diamondHistoryRequest.getId();
+    	DiamondPurchasedHistory d=diamondHistoryRepo.findById(id).get();
+    	System.out.println("gfhgfh"+id);
+    	System.out.println(d);
+        return d;
+        
+      
+    }
+
+ 
+
+    
+    @Override
+    public List<DiamondPurchasedHistory> getAllDiamondPurchasedHistoryByUserId(DiamondPurchasedHistoryRequest diamondPurchasedHistoryRequest) {
+    	String userId=diamondPurchasedHistoryRequest.getUserId();
+        return diamondHistoryRepo.findByUserId(userId);
+    }
+  
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    
+    
+    
+	
+    
+    
+  
+	
+    
+    
+    
+    
+    @Override
+    public DiamondUsageRate saveUsageRate(DiamondUsageRequest diamondRequest) {
+        DiamondUsageRate diamondUsageRate = new DiamondUsageRate(diamondRequest.getOperatorId());
+        diamondUsageRate.setCreatedOn(LocalDateTime.now());
+        diamondUsageRate.setUpdatedOn(LocalDateTime.now());
+        diamondUsageRate.setId(diamondRequest.getId());
+        diamondUsageRateRepo.save(diamondUsageRate);
+        return diamondUsageRate;
+    }
+
+    @Override
+    public DiamondUsageRate getUsageRateById(DiamondUsageRequest diamondUsageRequest) {
+        String id = diamondUsageRequest.getId();
+        return diamondUsageRateRepo.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<DiamondUsageRate> getAllUsageRate() {
+        return diamondUsageRateRepo.findAll();
+    }
+
+    @Override
+    public boolean deleteUsageRate(DiamondUsageRequest diamondUsageRequest) {
+        try {
+            String id = diamondUsageRequest.getId();
+            diamondUsageRateRepo.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+//    @Override
+//    public DiamondUsageRate updateDiamondUsageRate(DiamondUsageRequest diamondUsageRequest) {
+//        String id = diamondUsageRequest.getId();
+//        DiamondUsageRate existingDiamondUsageRate = diamondUsageRateRepo.findById(id).orElse(null);
+//
+//        if (existingDiamondUsageRate != null) {
+//            existingDiamondUsageRate.setDiamondRate(new Rate(diamondUsageRequest.getCallRate(), diamondUsageRequest.getImageRate()));
+//            existingDiamondUsageRate.setUpdatedOn(LocalDateTime.now());
+//            existingDiamondUsageRate.setId(diamondUsageRequest.getId());
+//            diamondUsageRateRepo.save(existingDiamondUsageRate);
+//        }
+//        return existingDiamondUsageRate;
+//    }    
+    
+    
+    
+    
+    
+    
+    
+    @Override
+    public DiamondUsageRate updateUsageRate(UsageRateRequest usageRateRequest) {
+        String id = usageRateRequest.getId();
+        DiamondUsageRate existingDiamondUsageRate = diamondUsageRateRepo.findById(id).orElse(null);
+
+        if (existingDiamondUsageRate != null) {
+            // Update the operatorId if necessary
+            if (usageRateRequest.getOperatorId() != null) {
+                existingDiamondUsageRate.setOperatorId(usageRateRequest.getOperatorId());
+            }
+
+            // Update the diamondRate map
+            if (usageRateRequest.getDiamondRate() != null) {
+                Map<String, UsageDetails> newDiamondRate = usageRateRequest.getDiamondRate();
+                existingDiamondUsageRate.setUsageDetailsMap(newDiamondRate);
+            }
+
+            existingDiamondUsageRate.setUpdatedOn(LocalDateTime.now());
+            diamondUsageRateRepo.save(existingDiamondUsageRate);
+        }
+        return existingDiamondUsageRate;
+    }
+
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    ///diamond spent  
+    @Override  
+     //String
+    public void spendDiamondsBasedOnCallRate(String userId,int time) {
+        // Get the user profile
+        UserProfile userProfile = userProfileRepo.findById(userId).orElse(null);
+        
+        if (userProfile != null) {
+            // Fetch the diamond usage rate based on operatorId (replace "operatorId" with the actual operatorId)
+            DiamondUsageRate diamondUsageRate = diamondUsageRateRepo.findByOperatorId("operatorId").orElse(null);
+
+            if (diamondUsageRate != null) {
+                // Calculate the diamond count based on the call rate
+                double callRate = diamondUsageRate.getDiamondRate().getCall();
+                int diamondsToSpend = (int) Math.ceil(callRate); // Assuming call rate is a fraction
+
+                // Check if the user has enough diamonds to spend
+                if (userProfile.spendDiamonds(diamondsToSpend)) {
+                    // Save the updated user profile
+                    userProfileRepo.save(userProfile);
+
+                    // Save the purchase history
+                    DiamondTransactionHistory purchaseProfile = new DiamondTransactionHistory();
+                    purchaseProfile.setUserId(userId);
+                    purchaseProfile.setPurchaseType("Call");
+                    purchaseProfile.setPurhaseTime(LocalDateTime.now());
+                    purchaseProfile.setTransaction_type("Spend");
+                    purchaseProfile.setDiamond(diamondsToSpend);
+                    purchaseProfile.setRemainingDamond(userProfile.getDiamondInfo().getCount());
+                    userPurchaseProfileRepo.save(purchaseProfile);
+                } else {
+                    // Handle case when the user doesn't have enough diamonds
+                    System.out.println("Not enough diamonds to spend.");
+                }
+            } else {
+                // Handle case when the diamond usage rate is not found
+                System.out.println("Diamond usage rate not found.");
+            }
+        } else {
+            // Handle case when the user profile is not found
+            System.out.println("User profile not found.");
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+	
+
+}

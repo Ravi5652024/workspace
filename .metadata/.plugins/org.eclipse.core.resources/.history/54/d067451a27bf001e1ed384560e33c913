@@ -1,0 +1,20 @@
+package com.example.demo.utils;
+
+public class URLConstants {
+	
+	private URLConstants() {
+		
+	}
+	
+	public static final String API_VERSION =  "/v1";
+	public static final String GIFT= "/gift";
+	public static final String  GIFT_DETAIL=  "/getAllDetails";
+	
+	public static final String GET_GIFT="/subscribeForGift";
+	
+	
+	public static final String DIAMOND="/diamond";
+	public static final String DIAMOND_DETAIL="/getAllDetails";
+	
+	public static final String GET_DIAMOND="/subscribeForDiamond";
+}

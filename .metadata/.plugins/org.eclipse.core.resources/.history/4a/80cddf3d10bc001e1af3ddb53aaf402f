@@ -1,0 +1,40 @@
+package com.example.demo.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.entity.DiamondPurchasedHistory;
+import com.example.demo.helperclasses.DiamondHelper;
+import com.example.demo.request.DiamondPurchasedHistoryRequest;
+import com.example.demo.response.GenericRes;
+import com.example.demo.service.DiamondSubscriptionServiceInterface;
+import com.example.demo.utils.URLConstants;;
+
+@RestController
+@CrossOrigin(origins = "*", maxAge = 3600)
+@RequestMapping(URLConstants.API_VERSION + URLConstants.DIAMOND)
+
+public class DiamondSubscriptionController {
+
+	private final DiamondSubscriptionServiceInterface diamondSubscriptionServiceInterface;
+
+	public DiamondSubscriptionController(DiamondSubscriptionServiceInterface diamondSubscriptionServiceInterface) {
+		this.diamondSubscriptionServiceInterface = diamondSubscriptionServiceInterface;
+	}
+
+	DiamondHelper helper = new DiamondHelper();
+
+	@PostMapping(URLConstants.GET_DIAMOND)
+	public ResponseEntity<GenericRes> saveDiamondPurchased(
+			@RequestBody DiamondPurchasedHistoryRequest diamondHistoryRequest) {
+		DiamondPurchasedHistory diamondPurchasedHistory = diamondSubscriptionServiceInterface
+				.saveDiamondPurchased(helper.mapToPurchasedHistory(diamondHistoryRequest));
+
+		GenericRes response = new GenericRes<>(200, "OK", "SUBSCRIBED", diamondPurchasedHistory);
+		return ResponseEntity.ok(response);
+	}
+}

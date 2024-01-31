@@ -1,0 +1,17 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import com.example.demo.entity.DiamondDetails;
+import com.example.demo.entity.DiamondPurchasedHistory;
+
+public interface DiamondServiceInterface {
+
+	public DiamondDetails addDiamond(DiamondDetails diamondDetails);
+
+	public List<DiamondDetails> getAllDiamondPacks();
+
+	public DiamondPurchasedHistory saveDiamondPurchased(DiamondPurchasedHistory diamondPurchasedHistory);
+
+
+}

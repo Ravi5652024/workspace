@@ -1,0 +1,270 @@
+package com.api.avatarbackend.controllers;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.api.avatarbackend.entities.DiamondPurchasedHistory;
+import com.api.avatarbackend.entities.GiftDetails;
+import com.api.avatarbackend.entities.GiftPurchasedHistory;
+import com.api.avatarbackend.models.request.DiamondPurchasedHistoryRequest;
+import com.api.avatarbackend.models.request.GiftPurchasedHistoryRequest;
+import com.api.avatarbackend.models.request.GiftRequest;
+import com.api.avatarbackend.models.response.GenericRes;
+import com.api.avatarbackend.services.GiftServiceInterface;
+import com.api.avatarbackend.utils.URIConstants;
+
+@RestController
+
+@CrossOrigin(origins = "*", maxAge = 3600)
+@RequestMapping(URIConstants.API_VERSION + URIConstants.GIFT)
+
+public class GiftController {
+
+	private final GiftServiceInterface giftServiceInterface;
+
+	public GiftController(GiftServiceInterface giftServiceInterface) {
+		this.giftServiceInterface = giftServiceInterface;
+		
+	}
+
+	
+	
+	
+	
+	
+	@PostMapping(URIConstants.CREATE_GIFT)
+    public ResponseEntity<GenericRes<GiftDetails>> saveGiftDetails(@RequestBody GiftRequest giftRequest) {
+		GiftDetails newDetails = giftServiceInterface.saveGiftDetails(giftRequest);
+
+        GenericRes<GiftDetails> response = new GenericRes<>(200, "OK", "GIFT_DETAILS_CREATED", newDetails);
+        return ResponseEntity.ok(response);
+    }
+ 
+ 
+ 
+ 
+ @GetMapping(URIConstants.GET_GIFT)
+    public ResponseEntity<GenericRes<GiftDetails>> getGiftDetailsById(@RequestBody GiftDetails giftDetail) {
+	    GiftDetails newDetails = giftServiceInterface.getGiftDetailsById(giftDetail);
+
+        if (newDetails != null) {
+            GenericRes<GiftDetails> response = new GenericRes<>(200, "OK", "GIFT_DETAILS_FOUND", newDetails);
+            return ResponseEntity.ok(response);
+        } else {
+            GenericRes<GiftDetails> response = new GenericRes<>(404, "NOT_FOUND", "GIFT_DETAILS_NOT_FOUND", null);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+        }
+    }
+ 
+ 
+ 
+ @GetMapping(URIConstants.GET_ALL_GIFTS)
+    public ResponseEntity<List<GenericRes<GiftDetails>>> getAllGiftDetails() {
+        List<GiftDetails> giftDetailsList = giftServiceInterface.getAllGiftDetails();
+
+        List<GenericRes<GiftDetails>> responseList = giftDetailsList.stream()
+                .map(giftDetails -> new GenericRes<>(200, "OK", "GIFT_DETAILS_FOUND", giftDetails))
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(responseList);
+    }
+ 
+ 
+
+ @PutMapping(URIConstants.UPDATE_GIFT)
+    public ResponseEntity<GenericRes<GiftDetails>> updateGiftDetails(
+    		@RequestBody GiftDetails giftDetail) {
+	        GiftDetails updatedgiftDetail = giftServiceInterface.updateGiftDetails(giftDetail);
+
+        if (updatedgiftDetail != null) {
+            GenericRes<GiftDetails> response = new GenericRes<>(200, "OK", "GIFT_DETAILS_UPDATED", updatedgiftDetail);
+            return ResponseEntity.ok(response);
+        } else {
+            GenericRes<GiftDetails> response = new GenericRes<>(404, "NOT_FOUND", "GIFT_DETAILS_NOT_FOUND", null);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+        }
+    }
+
+ 
+ 
+ 
+ 
+ 
+ @DeleteMapping(URIConstants.DELETE_GIFT)
+    public ResponseEntity<GenericRes> deleteGiftDetails(@RequestBody GiftDetails giftDetail) {
+        boolean isDeleted = giftServiceInterface.deleteGiftDetails(giftDetail);
+
+        if (isDeleted) {
+            GenericRes response = new GenericRes<>(200, "OK", "GIFT_DETAILS_DELETED", "Deleted");
+            return ResponseEntity.ok(response);
+        } else {
+            GenericRes response = new GenericRes<>(404, "NOT_FOUND", "GIFT_DETAILS_NOT_FOUND", "Not Found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+        }
+    }
+ 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@PostMapping(URIConstants.GIFT_PURCHASE)
+    public ResponseEntity<GenericRes<GiftPurchasedHistory>> saveGiftPurchasedHistory(@RequestBody GiftPurchasedHistoryRequest historyRequest) {
+		GiftPurchasedHistory newDetails = giftServiceInterface.saveGiftPurchasedHistory(historyRequest);
+
+        GenericRes<GiftPurchasedHistory> response = new GenericRes<>(200, "OK", "Purchase_DETAILS_CREATED", newDetails);
+        return ResponseEntity.ok(response);
+    }
+ 
+ 
+ 
+ 
+// @GetMapping(URIConstants.)
+//    public ResponseEntity<GenericRes<GiftPurchasedHistory>> getGiftPurchasedHistoryById(@RequestBody GiftPurchasedHistory historyRequest) {
+//	 GiftPurchasedHistory newDetails = giftServiceInterface.getGiftPurchasedHistoryById(historyRequest);
+//
+//        if (newDetails != null) {
+//            GenericRes<GiftPurchasedHistory> response = new GenericRes<>(200, "OK", "PURCHASED_HISTORY_FOUND", newDetails);
+//            return ResponseEntity.ok(response);
+//        } else {
+//            GenericRes<GiftPurchasedHistory> response = new GenericRes<>(404, "NOT_FOUND", "PURCHASED_HISTORY_NOT_FOUND", null);
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+//        }
+//    }
+// 
+ 
+ 
+ @GetMapping(URIConstants.GIFT_SEND)
+
+ public ResponseEntity<GenericRes<List<GiftPurchasedHistory>>> getAllGiftPurchasedHistoryByUserId(
+         @RequestBody GiftPurchasedHistoryRequest giftPurchasedHistoryRequest) {
+     List<GiftPurchasedHistory> historyList = giftServiceInterface.getAllGiftPurchasedHistoryByUserId(giftPurchasedHistoryRequest);
+
+     GenericRes<List<GiftPurchasedHistory>> response = new GenericRes<>(200, "OK", "PURCHASED_HISTORY_FOUND", historyList);
+
+     return ResponseEntity.ok(response);
+ }
+
+ 
+ 
+
+ 
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
